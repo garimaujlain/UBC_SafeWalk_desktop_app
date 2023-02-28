@@ -20,6 +20,10 @@ public class Volunteer {
         this.availability = (ArrayList<Boolean>) availability;
     }
 
+    public Volunteer() {
+
+    }
+
 
     public String getName() {
         return name;

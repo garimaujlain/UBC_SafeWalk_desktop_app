@@ -8,6 +8,7 @@ public class Scheduler {
     private static List<Volunteer> volunteers;
 
 
+
     static List<String> daysOfWeek = Arrays.asList("Monday", "Tuesday", "Wednesday",
             "Thursday", "Friday", "Saturday", "Sunday");
 
@@ -17,6 +18,11 @@ public class Scheduler {
 
 
     }
+
+    public Scheduler() {
+
+    }
+
 
     public HashMap<String, List<Volunteer>> makeSchedule() {
         HashMap<String, List<Volunteer>> schedule = new HashMap<>();
@@ -41,8 +47,10 @@ public class Scheduler {
 
 
     public void addVolunteer(Volunteer volunteer) {
-        this.volunteers.add(volunteer);
+        volunteers.add(volunteer);
     }
+
+
 
     public static Volunteer findVolunteer(String name) {
         for (Volunteer volunteer : volunteers) {
@@ -56,7 +64,7 @@ public class Scheduler {
     public static List<String> onDuty(String day) {
         List<String> temp = new ArrayList<>();
         for (Volunteer volunteer : volunteers) {
-            if (volunteer.getAvailability(day).equals(true)) {
+            if (volunteer.getAvailability(day)) {
                 temp.add(volunteer.getName());
             }
 
@@ -64,8 +72,9 @@ public class Scheduler {
         return temp;
     }
 
-
-
+    public List<Volunteer> getVolunteers() {
+        return volunteers;
+    }
 }
 
 

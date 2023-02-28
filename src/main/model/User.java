@@ -21,6 +21,10 @@ public class User {
         this.volunteer = volunteer;
     }
 
+    public User() {
+
+    }
+
 
     public String getName() {
         return name;
@@ -38,12 +42,12 @@ public class User {
         return volunteer;
     }
 
-//    public void updateUser(String name, int age, String gender, String volunteer) {
-//        this.name = name;
-//        this.age = age;
-//        this.gender = gender;
-//        this.volunteer = volunteer;
-//    }
+    public void updateUser(String name, int age, String gender, String volunteer) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.volunteer = volunteer;
+    }
 
 
 
