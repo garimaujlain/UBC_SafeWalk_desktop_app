@@ -10,12 +10,13 @@ import java.util.List;
 
 
 public class Main {
+    @SuppressWarnings("checkstyle:MethodLength")
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Volunteer volunteer = new Volunteer();
         Scheduler scheduler = new Scheduler();
         User user = new User();
-        Integer input;
+        int input;
 
         while (true) {
             System.out.println("Hello, Welcome to SafeWalk!");
@@ -24,7 +25,7 @@ public class Main {
             System.out.println("1. A volunteer");
             System.out.println("2. A Client");
             System.out.println("3. Quit");
-            input = Integer.valueOf(scanner.nextLine());
+            input = Integer.parseInt(scanner.nextLine());
 
             if (input == 1) {
                 goVolunteer(scanner, volunteer, scheduler, user);
@@ -58,7 +59,7 @@ public class Main {
 
                 System.out.println("Your age:");
                 input = scanner.nextLine();
-                Integer age = Integer.valueOf(input);
+                int age = Integer.parseInt(input);
 
                 System.out.println("Your gender: (press NA if you prefer not to say)");
                 input = scanner.nextLine();
@@ -141,6 +142,7 @@ public class Main {
 
                 volunteer = new Volunteer(name, age, gender, temp);
                 scheduler.addVolunteer(volunteer);
+                break;
 
 
             } else {
@@ -153,7 +155,7 @@ public class Main {
     private static void goCurrentVolunteer(Scanner scanner, Volunteer volunteer, Scheduler scheduler, User user) {
 
 
-        Integer input;
+        int input;
 
         while (true) {
             System.out.println("Hello, welcome back to SafeWalk!");
@@ -162,7 +164,7 @@ public class Main {
             System.out.println("2. Something came up? Delete availability in one click!");
             System.out.println("3. Made an error in personal information? Edit in one click!");
             System.out.println("4. Wrong Selection? quit here.");
-            input = Integer.valueOf(scanner.nextLine());
+            input = Integer.parseInt(scanner.nextLine());
 
             if (input == 1) {
                 addSlot(scanner, volunteer, scheduler, user);
@@ -186,8 +188,7 @@ public class Main {
     }
 
     private static void editInfo(Scanner scanner, Volunteer volunteer, Scheduler scheduler, User user) {
-        Integer input;
-
+        int input;
         while (true) {
             System.out.println("Made an error in Personal information? edit now");
             System.out.println("What do you want to edit?");
@@ -195,30 +196,27 @@ public class Main {
             System.out.println("2. Age");
             System.out.println("3. Gender");
             System.out.println("4. Wrong Selection? quit here.");
-            input = Integer.valueOf(scanner.nextLine());
-
+            input = Integer.parseInt(scanner.nextLine());
             if (input == 1) {
-                editName(scanner, volunteer, scheduler, user);
+                editName(scanner, scheduler, user);
                 break;
             }
             if (input == 2) {
-                editAge(scanner, volunteer, scheduler, user);
+                editAge(scanner, scheduler, user);
                 break;
             }
             if (input == 3) {
-                editGender(scanner, volunteer, scheduler, user);
+                editGender(scanner);
                 break;
             }
-
             if (input == 4) {
                 System.out.println("Leaving so soon? We will miss you. Stay safe, goodbye!");
                 break;
             }
-
         }
     }
 
-    private static void editGender(Scanner scanner, Volunteer volunteer, Scheduler scheduler, User user) {
+    private static void editGender(Scanner scanner) {
         String input;
 
         while (true) {
@@ -228,7 +226,7 @@ public class Main {
 
             String name = input;
 
-            volunteer = Scheduler.findVolunteer(name);
+            Volunteer volunteer = Scheduler.findVolunteer(name);
             System.out.println("Please mention the corrected gender");
             input = scanner.nextLine();
 
@@ -242,7 +240,7 @@ public class Main {
 
     }
 
-    private static void editAge(Scanner scanner, Volunteer volunteer, Scheduler scheduler, User user) {
+    private static void editAge(Scanner scanner, Scheduler scheduler, User user) {
 
         String input;
 
@@ -254,7 +252,7 @@ public class Main {
 
             String name = input;
 
-            volunteer = Scheduler.findVolunteer(name);
+            Volunteer volunteer = Scheduler.findVolunteer(name);
             System.out.println("Please mention the corrected age");
             input = scanner.nextLine();
 
@@ -267,7 +265,7 @@ public class Main {
         }
     }
 
-    private static void editName(Scanner scanner, Volunteer volunteer, Scheduler scheduler, User user) {
+    private static void editName(Scanner scanner, Scheduler scheduler, User user) {
         String input;
 
         while (true) {
@@ -277,7 +275,7 @@ public class Main {
 
             String name = input;
 
-            volunteer = Scheduler.findVolunteer(name);
+            Volunteer volunteer = Scheduler.findVolunteer(name);
             System.out.println("Please mention the corrected name");
             input = scanner.nextLine();
 
@@ -306,7 +304,7 @@ public class Main {
 
             String day = input;
 
-            Volunteer.addDay(volunteer, day);
+            Volunteer.deleteDay(volunteer, day);
 
             System.out.println("Shift added successfully");
 
@@ -328,7 +326,9 @@ public class Main {
 
             String day = input;
 
-            Volunteer.deleteDay(volunteer, day);
+            assert volunteer != null;
+            volunteer.addDay(volunteer, day);
+
 
             System.out.println("Shift deleted successfully");
 
@@ -338,14 +338,14 @@ public class Main {
 
     private static void goClient(Scanner scanner, Volunteer volunteer, Scheduler scheduler, User user) {
 
-        Integer input;
+        int input;
 
         while (true) {
             System.out.println("Hello, Welcome to SafeWalk! What can we do for you today?");
 
             System.out.println("1. Get a volunteer to walk you home safely");
             System.out.println("2. Quit");
-            input = Integer.valueOf(scanner.nextLine());
+            input = Integer.parseInt(scanner.nextLine());
 
             if (input == 1) {
                 pickVolunteer(scanner, volunteer, scheduler, user);

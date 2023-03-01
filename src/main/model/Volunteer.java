@@ -2,8 +2,6 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-import java.util.HashSet;
 
 
 
@@ -51,7 +49,7 @@ public class Volunteer {
         }
         if (availability) {
             System.out.println("Your already available on this day ");
-            return;
+
         }
         int index = Scheduler.daysOfWeek.indexOf(day);
         volunteer.getAvailabilityList().set(index, true);
@@ -81,8 +79,6 @@ public class Volunteer {
 
         if (volunteer != null) {
             volunteer.setName(name);
-        } else {
-            return;
         }
     }
 
@@ -94,8 +90,6 @@ public class Volunteer {
 
         if (volunteer != null) {
             volunteer.setAge(age);
-        } else {
-            return;
         }
     }
 
@@ -107,8 +101,6 @@ public class Volunteer {
 
         if (volunteer != null) {
             volunteer.setGender(gender);
-        } else {
-            return;
         }
     }
 
@@ -116,22 +108,23 @@ public class Volunteer {
 
 
     public Boolean getAvailability(String day) {
-        if (day.equals("Monday")) {
-            return availability.get(0);
-        } else if (day.equals("Tuesday")) {
-            return availability.get(1);
-        } else if (day.equals("Wednesday")) {
-            return availability.get(2);
-        } else if (day.equals("Thursday")) {
-            return availability.get(3);
-        } else if (day.equals("Friday")) {
-            return availability.get(4);
-        } else if (day.equals("Saturday")) {
-            return availability.get(5);
-        } else if (day.equals("Sunday")) {
-            return availability.get(6);
-        } else {
-            return null;
+        switch (day) {
+            case "Monday":
+                return availability.get(0);
+            case "Tuesday":
+                return availability.get(1);
+            case "Wednesday":
+                return availability.get(2);
+            case "Thursday":
+                return availability.get(3);
+            case "Friday":
+                return availability.get(4);
+            case "Saturday":
+                return availability.get(5);
+            case "Sunday":
+                return availability.get(6);
+            default:
+                return null;
         }
 
     }
@@ -142,5 +135,3 @@ public class Volunteer {
 
 
 }
-
-

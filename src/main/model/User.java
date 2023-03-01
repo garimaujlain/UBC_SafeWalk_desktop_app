@@ -1,10 +1,5 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.HashSet;
-
 
 
 public class User {
@@ -42,12 +37,12 @@ public class User {
         return volunteer;
     }
 
-    public void updateUser(String name, int age, String gender, String volunteer) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
-        this.volunteer = volunteer;
-    }
+//    public void updateUser(String name, int age, String gender, String volunteer) {
+//        this.name = name;
+//        this.age = age;
+//        this.gender = gender;
+//        this.volunteer = volunteer;
+//    }
 
 
 

@@ -12,15 +12,15 @@ import java.util.List;
 public class SchedulerTest {
     @Test
     public void testScheduler() {
-        ArrayList<Boolean> availability1 = new ArrayList<Boolean>(Arrays.asList(true, false, true, false, true, false, true));
-        ArrayList<Boolean> availability2 = new ArrayList<Boolean>(Arrays.asList(false, true, false, true, false, true, false));
-        ArrayList<Boolean> availability3 = new ArrayList<Boolean>(Arrays.asList(true, true, true, true, true, true, true));
+        ArrayList<Boolean> availability1 = new ArrayList<>(Arrays.asList(true, false, true, false, true, false, true));
+        ArrayList<Boolean> availability2 = new ArrayList<>(Arrays.asList(false, true, false, true, false, true, false));
+        ArrayList<Boolean> availability3 = new ArrayList<>(Arrays.asList(true, true, true, true, true, true, true));
 
         Volunteer volunteer1 = new Volunteer("Garima Ujlain", 21, "Male", availability1);
         Volunteer volunteer2 = new Volunteer("Jai Singh", 35, "Female", availability2);
         Volunteer volunteer3 = new Volunteer("Vrinda Vyas", 70, "Male", availability3);
 
-        List<Volunteer> volunteers = new ArrayList<Volunteer>(Arrays.asList(volunteer1, volunteer2, volunteer3));
+        List<Volunteer> volunteers = new ArrayList<>(Arrays.asList(volunteer1, volunteer2, volunteer3));
         Scheduler scheduler = new Scheduler(volunteers);
 
         HashMap<String, List<Volunteer>> schedule = scheduler.makeSchedule();
@@ -61,24 +61,24 @@ public class SchedulerTest {
 
 
 
-        ArrayList<Boolean> availability4 = new ArrayList<Boolean>(Arrays.asList(false, true, true, false, false, false, true));
-        ArrayList<Boolean> availability5 = new ArrayList<Boolean>(Arrays.asList(true, false, true, false, false, true, false));
-        ArrayList<Boolean> availability6 = new ArrayList<Boolean>(Arrays.asList(false, false, true, true, false, true, false));
+        ArrayList<Boolean> availability4 = new ArrayList<>(Arrays.asList(false, true, true, false, false, false, true));
+        ArrayList<Boolean> availability5 = new ArrayList<>(Arrays.asList(true, false, true, false, false, true, false));
+        ArrayList<Boolean> availability6 = new ArrayList<>(Arrays.asList(false, false, true, true, false, true, false));
 
         Volunteer volunteer4 = new Volunteer("Alice", 25, "Female", availability4);
         Volunteer volunteer5 = new Volunteer("Bob", 30, "Male", availability5);
         Volunteer volunteer6 = new Volunteer("Charlie", 35, "Male", availability6);
-        List<Volunteer> volunteers = new ArrayList<Volunteer>(Arrays.asList(volunteer4, volunteer5, volunteer6));
-        Scheduler scheduler = new Scheduler(volunteers);
+        List<Volunteer> volunteers = new ArrayList<>(Arrays.asList(volunteer4, volunteer5, volunteer6));
+        new Scheduler(volunteers);
 
 
 
-        List<String> tuesdayVolunteers = scheduler.onDuty("Tuesday");
+        List<String> tuesdayVolunteers = Scheduler.onDuty("Tuesday");
         assertEquals(1, tuesdayVolunteers.size()); // make sure there are 2 volunteers on duty
         assertTrue(tuesdayVolunteers.contains("Alice")); // make sure Alice is on duty
 
 
-        List<String> saturdayVolunteers = scheduler.onDuty("Saturday");
+        List<String> saturdayVolunteers = Scheduler.onDuty("Saturday");
         assertEquals(2, saturdayVolunteers.size()); // make sure there are 2 volunteers on duty
 
         assertTrue(saturdayVolunteers.contains("Bob")); // make sure Bob is not on duty
@@ -87,16 +87,16 @@ public class SchedulerTest {
 
     @Test
     void testAddVolunteer() {
-        ArrayList<Boolean> availability4 = new ArrayList<Boolean>(Arrays.asList(false, true, true, false, false, false, true));
-        ArrayList<Boolean> availability5 = new ArrayList<Boolean>(Arrays.asList(true, false, true, false, false, true, false));
-        ArrayList<Boolean> availability6 = new ArrayList<Boolean>(Arrays.asList(false, false, true, true, false, true, false));
-        ArrayList<Boolean> availability7 = new ArrayList<Boolean>(Arrays.asList(false, true, true, false, true, false, true));
+        ArrayList<Boolean> availability4 = new ArrayList<>(Arrays.asList(false, true, true, false, false, false, true));
+        ArrayList<Boolean> availability5 = new ArrayList<>(Arrays.asList(true, false, true, false, false, true, false));
+        ArrayList<Boolean> availability6 = new ArrayList<>(Arrays.asList(false, false, true, true, false, true, false));
+        ArrayList<Boolean> availability7 = new ArrayList<>(Arrays.asList(false, true, true, false, true, false, true));
 
         Volunteer volunteer4 = new Volunteer("Alice", 25, "Female", availability4);
         Volunteer volunteer5 = new Volunteer("Bob", 30, "Male", availability5);
         Volunteer volunteer6 = new Volunteer("Charlie", 35, "Male", availability6);
 
-        List<Volunteer> volunteers = new ArrayList<Volunteer>(Arrays.asList(volunteer4, volunteer5, volunteer6));
+        List<Volunteer> volunteers = new ArrayList<>(Arrays.asList(volunteer4, volunteer5, volunteer6));
         Scheduler scheduler = new Scheduler(volunteers);
 
         Volunteer volunteer7 = new Volunteer("Dave", 40, "Male", availability7);
@@ -108,17 +108,17 @@ public class SchedulerTest {
     @Test
     void testFindVolunteer() {
 
-        ArrayList<Boolean> availability4 = new ArrayList<Boolean>(Arrays.asList(false, true, true, false, false, false, true));
-        ArrayList<Boolean> availability5 = new ArrayList<Boolean>(Arrays.asList(true, false, true, false, false, true, false));
-        ArrayList<Boolean> availability6 = new ArrayList<Boolean>(Arrays.asList(false, false, true, true, false, true, false));
+        ArrayList<Boolean> availability4 = new ArrayList<>(Arrays.asList(false, true, true, false, false, false, true));
+        ArrayList<Boolean> availability5 = new ArrayList<>(Arrays.asList(true, false, true, false, false, true, false));
+        ArrayList<Boolean> availability6 = new ArrayList<>(Arrays.asList(false, false, true, true, false, true, false));
 
         Volunteer volunteer4 = new Volunteer("Alice", 25, "Female", availability4);
         Volunteer volunteer5 = new Volunteer("Bob", 30, "Male", availability5);
         Volunteer volunteer6 = new Volunteer("Charlie", 35, "Male", availability6);
-        List<Volunteer> volunteers = new ArrayList<Volunteer>(Arrays.asList(volunteer4, volunteer5, volunteer6));
-        Scheduler scheduler = new Scheduler(volunteers);
+        List<Volunteer> volunteers = new ArrayList<>(Arrays.asList(volunteer4, volunteer5, volunteer6));
+        new Scheduler(volunteers);
 
-        Volunteer foundVolunteer = scheduler.findVolunteer("Alice");
+        Volunteer foundVolunteer = Scheduler.findVolunteer("Alice");
         assertNotNull(foundVolunteer); // make sure a volunteer was found
         assertEquals("Alice", foundVolunteer.getName()); // make sure it's the right volunteer
     }
@@ -126,14 +126,14 @@ public class SchedulerTest {
     @Test
     void testMakeSchedule() {
 
-        ArrayList<Boolean> availability4 = new ArrayList<Boolean>(Arrays.asList(false, true, true, false, false, false, true));
-        ArrayList<Boolean> availability5 = new ArrayList<Boolean>(Arrays.asList(true, false, true, false, false, true, false));
-        ArrayList<Boolean> availability6 = new ArrayList<Boolean>(Arrays.asList(false, false, true, true, false, true, false));
+        ArrayList<Boolean> availability4 = new ArrayList<>(Arrays.asList(false, true, true, false, false, false, true));
+        ArrayList<Boolean> availability5 = new ArrayList<>(Arrays.asList(true, false, true, false, false, true, false));
+        ArrayList<Boolean> availability6 = new ArrayList<>(Arrays.asList(false, false, true, true, false, true, false));
 
         Volunteer volunteer4 = new Volunteer("Alice", 25, "Female", availability4);
         Volunteer volunteer5 = new Volunteer("Bob", 30, "Male", availability5);
         Volunteer volunteer6 = new Volunteer("Charlie", 35, "Male", availability6);
-        List<Volunteer> volunteers = new ArrayList<Volunteer>(Arrays.asList(volunteer4, volunteer5, volunteer6));
+        List<Volunteer> volunteers = new ArrayList<>(Arrays.asList(volunteer4, volunteer5, volunteer6));
         Scheduler scheduler = new Scheduler(volunteers);
 
         HashMap<String, List<Volunteer>> schedule = scheduler.makeSchedule();

@@ -12,7 +12,7 @@ public class VolunteerTest {
 
     @Test
     public void testVolunteer() {
-        ArrayList<Boolean> availability = new ArrayList<Boolean>(Arrays.asList(true, false, true, false, true, false, true));
+        ArrayList<Boolean> availability = new ArrayList<>(Arrays.asList(true, false, true, false, true, false, true));
         Volunteer volunteer = new Volunteer("John Doe", 25, "Male", availability);
 
         assertEquals(volunteer.getName(), "John Doe");

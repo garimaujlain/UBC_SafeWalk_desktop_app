@@ -1,7 +1,5 @@
 package model;
 
-import java.sql.Array;
-import java.time.DayOfWeek;
 import java.util.*;
 
 public class Scheduler {
@@ -14,12 +12,13 @@ public class Scheduler {
 
 
     public Scheduler(List<Volunteer> volunteers) {
-        this.volunteers = volunteers;
+        Scheduler.volunteers = volunteers;
 
 
     }
 
     public Scheduler() {
+        volunteers = new ArrayList<>();
 
     }
 
@@ -58,6 +57,7 @@ public class Scheduler {
                 return volunteer;
             }
         }
+
         return null;
     }
 
