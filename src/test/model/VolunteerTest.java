@@ -30,7 +30,7 @@ public class VolunteerTest {
     @Test
     public void testVolunteer2() {
         ArrayList<Boolean> availability = new ArrayList();
-        Volunteer volunteer = new Volunteer(null, 0, null, availability);
+        Volunteer volunteer = new Volunteer();
 
 
     }

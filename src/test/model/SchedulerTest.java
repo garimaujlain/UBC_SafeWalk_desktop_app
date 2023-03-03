@@ -61,7 +61,7 @@ public class SchedulerTest {
 
 
         List<Volunteer> volunteers = new ArrayList<>();
-        Scheduler scheduler = new Scheduler(volunteers);
+        Scheduler scheduler = new Scheduler();
 
 
     }
@@ -132,7 +132,7 @@ public class SchedulerTest {
         assertEquals("Garima", temp1.getName()); // make sure it's the right volunteer
 
         Volunteer temp2 = Scheduler.findVolunteer("Raj");
-        assertNull(temp2); // make sure a volunteer was found
+        assertNull(temp2);
     }
 
     @Test
