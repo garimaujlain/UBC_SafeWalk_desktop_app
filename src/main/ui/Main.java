@@ -38,6 +38,7 @@ public class Main {
             }
             if (input == 3) {
                 System.out.println("Leaving so soon? We will miss you. Stay safe, goodbye!");
+                break;
 
             }
         }
