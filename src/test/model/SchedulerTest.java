@@ -121,15 +121,18 @@ public class SchedulerTest {
         ArrayList<Boolean> availability5 = new ArrayList<>(Arrays.asList(true, false, true, false, false, true, false));
         ArrayList<Boolean> availability6 = new ArrayList<>(Arrays.asList(false, false, true, true, false, true, false));
 
-        Volunteer volunteer4 = new Volunteer("Alice", 25, "Female", availability4);
+        Volunteer volunteer4 = new Volunteer("Garima", 25, "Female", availability4);
         Volunteer volunteer5 = new Volunteer("Bob", 30, "Male", availability5);
         Volunteer volunteer6 = new Volunteer("Charlie", 35, "Male", availability6);
         List<Volunteer> volunteers = new ArrayList<>(Arrays.asList(volunteer4, volunteer5, volunteer6));
         new Scheduler(volunteers);
 
-        Volunteer foundVolunteer = Scheduler.findVolunteer("Alice");
-        assertNotNull(foundVolunteer); // make sure a volunteer was found
-        assertEquals("Alice", foundVolunteer.getName()); // make sure it's the right volunteer
+        Volunteer temp1 = Scheduler.findVolunteer("Garima");
+        assertNotNull(temp1); // make sure a volunteer was found
+        assertEquals("Garima", temp1.getName()); // make sure it's the right volunteer
+
+        Volunteer temp2 = Scheduler.findVolunteer("Raj");
+        assertNull(temp2); // make sure a volunteer was found
     }
 
     @Test

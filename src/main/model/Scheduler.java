@@ -55,11 +55,12 @@ public class Scheduler {
         for (Volunteer volunteer : volunteers) {
             if (volunteer.getName().equals(name)) {
                 return volunteer;
+            } else {
+                System.out.println("incorrect name");
+                return null;
             }
-            System.out.println("incorrect name");
-            return null;
-        }
 
+        }
         return null;
     }
 

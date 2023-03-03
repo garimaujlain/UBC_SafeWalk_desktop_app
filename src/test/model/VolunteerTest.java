@@ -112,6 +112,10 @@ public class VolunteerTest {
         Volunteer volunteer = new Volunteer("Garima Smith", 35, "Male", availability);
         Volunteer.newName(volunteer, "Angad Singh");
         assertEquals("Angad Singh", volunteer.getName());
+
+        Volunteer temp = null;
+        Volunteer.newName(temp, "garima");
+        assertNull(temp);
     }
 
     @Test
@@ -120,6 +124,10 @@ public class VolunteerTest {
         Volunteer volunteer = new Volunteer("Dash Smith", 25, "Male", availability);
         Volunteer.newAge(volunteer, 45);
         assertEquals(45, volunteer.getAge());
+
+        Volunteer volunteer2 = null;
+        Volunteer.newAge(volunteer2, 33);
+        assertNull(volunteer2);
     }
 
     @Test
@@ -128,6 +136,10 @@ public class VolunteerTest {
         Volunteer volunteer = new Volunteer("John Smith", 25, "Male", availability);
         Volunteer.newGender(volunteer, "Male");
         assertEquals("Male", volunteer.getGender());
+
+        Volunteer temp = null;
+        Volunteer.newGender(temp, "Female");
+        assertNull(temp);
     }
 
 

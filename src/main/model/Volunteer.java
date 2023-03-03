@@ -77,6 +77,9 @@ public class Volunteer {
 
         if (volunteer != null) {
             volunteer.setName(name);
+        } else {
+            System.out.println("Volunteer doesn't exist");
+
         }
     }
 
@@ -88,6 +91,9 @@ public class Volunteer {
 
         if (volunteer != null) {
             volunteer.setAge(age);
+        } else {
+            System.out.println("Volunteer doesn't exist");
+
         }
     }
 
@@ -99,6 +105,9 @@ public class Volunteer {
 
         if (volunteer != null) {
             volunteer.setGender(gender);
+        } else {
+            System.out.println("Volunteer doesn't exist");
+
         }
     }
 
