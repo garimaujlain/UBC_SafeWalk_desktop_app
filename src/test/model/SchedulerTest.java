@@ -11,7 +11,7 @@ import java.util.List;
 
 public class SchedulerTest {
     @Test
-    public void testScheduler() {
+    public void testScheduler1() {
         ArrayList<Boolean> availability1 = new ArrayList<>(Arrays.asList(true, false, true, false, true, false, true));
         ArrayList<Boolean> availability2 = new ArrayList<>(Arrays.asList(false, true, false, true, false, true, false));
         ArrayList<Boolean> availability3 = new ArrayList<>(Arrays.asList(true, true, true, true, true, true, true));
@@ -56,6 +56,15 @@ public class SchedulerTest {
         assertFalse(schedule.get("Sunday").contains(volunteer2));
     }
 
+    @Test
+    public void testScheduler2() {
+
+
+        List<Volunteer> volunteers = new ArrayList<>();
+        Scheduler scheduler = new Scheduler(volunteers);
+
+
+    }
     @Test
     void testOnDuty() {
 
@@ -153,7 +162,3 @@ public class SchedulerTest {
 
 
 }
-
-
-
-

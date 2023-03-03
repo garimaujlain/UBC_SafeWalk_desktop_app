@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class VolunteerTest {
 
     @Test
-    public void testVolunteer() {
+    public void testVolunteer1() {
         ArrayList<Boolean> availability = new ArrayList<>(Arrays.asList(true, false, true, false, true, false, true));
         Volunteer volunteer = new Volunteer("John Doe", 25, "Male", availability);
 
@@ -25,6 +25,14 @@ public class VolunteerTest {
         assertTrue(volunteer.getAvailability("Friday"));
         assertFalse(volunteer.getAvailability("Saturday"));
         assertTrue(volunteer.getAvailability("Sunday"));
+    }
+
+    @Test
+    public void testVolunteer2() {
+        ArrayList<Boolean> availability = new ArrayList();
+        Volunteer volunteer = new Volunteer(null, 0, null, availability);
+
+
     }
 
     @Test
@@ -64,18 +72,38 @@ public class VolunteerTest {
 
     @Test
     public void testAddDay() {
-        ArrayList<Boolean> availability = new ArrayList<>(Arrays.asList(false, false, true, false, true, false, true));
-        Volunteer volunteer = new Volunteer("John Smith", 25, "Male", availability);
-        Volunteer.addDay(volunteer, "Monday");
-        assertTrue(volunteer.getAvailability("Monday"));
+
+        ArrayList<Boolean> availability1 = new ArrayList<>(Arrays.asList(false, false, true, false, true, false, true));
+        ArrayList<Boolean> availability2 = new ArrayList<>(Arrays.asList(true, true, true, false, true, false, true));
+
+
+        Volunteer volunteer1 = new Volunteer("John Smith", 25, "Male", availability1);
+        Volunteer volunteer2 = new Volunteer("Garima Singh", 46, "Male", availability2);
+        Volunteer.addDay(volunteer1, "Monday");
+        assertTrue(volunteer1.getAvailability("Monday"));
+
+        Volunteer.addDay(volunteer1, "Wednesday");
+        assertTrue(volunteer1.getAvailability("Wednesday"));
+
+        Volunteer.addDay(volunteer2, "Monday");
+        assertTrue(volunteer2.getAvailability("Monday"));
+
+        Volunteer.addDay(volunteer2, "Saturday");
+        assertTrue(volunteer2.getAvailability("Saturday"));
     }
 
     @Test
     public void testDeleteDay() {
-        ArrayList<Boolean> availability = new ArrayList<>(Arrays.asList(true, true, true, false, true, false, true));
-        Volunteer volunteer = new Volunteer("Garima Smith", 28, "Male", availability);
-        Volunteer.deleteDay(volunteer, "Tuesday");
-        assertFalse(volunteer.getAvailability("Tuesday"));
+        ArrayList<Boolean> availability1 = new ArrayList<>(Arrays.asList(true, true, true, true, true, false, false));
+        ArrayList<Boolean> availability2 = new ArrayList<>(Arrays.asList(true, true, true, false, true, false, true));
+
+        Volunteer volunteer1 = new Volunteer("Jhon Delta", 32, "Female", availability1);
+        Volunteer volunteer2 = new Volunteer("Garima Singh", 46, "Male", availability2);
+        Volunteer.deleteDay(volunteer1, "Tuesday");
+        assertFalse(volunteer1.getAvailability("Tuesday"));
+        Volunteer.deleteDay(volunteer1, "Saturday");
+        assertFalse(volunteer1.getAvailability("Saturday"));
+
     }
 
     @Test

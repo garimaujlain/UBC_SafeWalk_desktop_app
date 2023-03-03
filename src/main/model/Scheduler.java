@@ -56,11 +56,11 @@ public class Scheduler {
             if (volunteer.getName().equals(name)) {
                 return volunteer;
             }
+            System.out.println("incorrect name");
+            return null;
         }
 
-        System.out.println("incorrect name");
         return null;
-
     }
 
     public static List<String> onDuty(String day) {

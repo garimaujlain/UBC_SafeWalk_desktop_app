@@ -42,11 +42,11 @@ public class Volunteer {
 
     public static void addDay(Volunteer volunteer, String day) {
         Boolean x = volunteer.getAvailability(day);
-        if (x == null) {
-            System.out.println("Invalid day!");
-            return;
-        }
+
         if (x) {
+            int index = Scheduler.daysOfWeek.indexOf(day);
+            volunteer.getAvailabilityList().set(index, true);
+
             System.out.println("Your already available on this day ");
 
         }
@@ -57,14 +57,12 @@ public class Volunteer {
 
     public static void deleteDay(Volunteer volunteer, String day) {
         Boolean x = volunteer.getAvailability(day);
-        if (x == null) {
-            System.out.println("Invalid day!");
-            return;
 
-        }
         if (!x) {
+            int index = Scheduler.daysOfWeek.indexOf(day);
+            volunteer.getAvailabilityList().set(index, false);
             System.out.println("You are already unavailable on this day ");
-            return;
+
         }
         int index = Scheduler.daysOfWeek.indexOf(day);
         volunteer.getAvailabilityList().set(index, false);
