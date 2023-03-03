@@ -1,6 +1,7 @@
 package model;
 
 
+import java.util.ArrayList;
 
 public class User {
     private String name;
@@ -17,6 +18,10 @@ public class User {
     }
 
     public User() {
+        this.name = null;
+        this.age = 0;
+        this.gender = null;
+        this.volunteer = null;
 
     }
 
@@ -33,7 +38,7 @@ public class User {
         return gender;
     }
 
-    public String getVolunteer() {
+    public String getAssigned() {
         return volunteer;
     }
 

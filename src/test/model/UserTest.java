@@ -1,6 +1,9 @@
 package model;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class UserTest {
@@ -13,7 +16,7 @@ public class UserTest {
     @Test
     public void testGetVolunteer() {
         User user = new User("David", 40, "male", "Yes");
-        assertEquals("Yes", user.getVolunteer());
+        assertEquals("Yes", user.getAssigned());
     }
 
 
@@ -29,6 +32,29 @@ public class UserTest {
         User user = new User("Vrinda", 33, "male", "No");
         assertEquals(33, user.getAge());
     }
+
+    @Test
+    public void testUser1() {
+
+        User user = new User("Gam Doe", 27, "Female", "Max Harding");
+
+        assertEquals(user.getName(), "Gam Doe");
+        assertEquals(user.getAge(), 27);
+        assertEquals(user.getGender(), "Female");
+        assertEquals(user.getAssigned(), ("Max Harding"));
+
+    }
+
+    @Test
+    public void testUser2() {
+
+        User temp2 = new User();
+
+
+    }
+
+
+
 
 
 }
