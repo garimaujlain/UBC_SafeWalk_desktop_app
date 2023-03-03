@@ -9,7 +9,7 @@ public class Volunteer {
     private String name;
     private int age;
     private String gender;
-    private ArrayList<Boolean> availability;
+    private final ArrayList<Boolean> availability;
 
     public Volunteer(String name, int age, String gender, List<Boolean> availability) {
         this.name = name;
@@ -19,6 +19,10 @@ public class Volunteer {
     }
 
     public Volunteer() {
+        this.name = null;
+        this.age = 0;
+        this.gender = null;
+        this.availability = new ArrayList<>();
 
     }
 
@@ -26,11 +30,6 @@ public class Volunteer {
     public String getName() {
         return name;
     }
-
-
-
-
-
 
 
     public int getAge() {
@@ -42,12 +41,12 @@ public class Volunteer {
     }
 
     public static void addDay(Volunteer volunteer, String day) {
-        Boolean availability = volunteer.getAvailability(day);
-        if (availability == null) {
+        Boolean x = volunteer.getAvailability(day);
+        if (x == null) {
             System.out.println("Invalid day!");
             return;
         }
-        if (availability) {
+        if (x) {
             System.out.println("Your already available on this day ");
 
         }
@@ -57,12 +56,13 @@ public class Volunteer {
     }
 
     public static void deleteDay(Volunteer volunteer, String day) {
-        Boolean availability = volunteer.getAvailability(day);
-        if (availability == null) {
+        Boolean x = volunteer.getAvailability(day);
+        if (x == null) {
             System.out.println("Invalid day!");
             return;
+
         }
-        if (availability.equals(false)) {
+        if (!x) {
             System.out.println("You are already unavailable on this day ");
             return;
         }
@@ -129,9 +129,13 @@ public class Volunteer {
 
     }
 
-    public List<Boolean> getAvailabilityList() {
+
+    public ArrayList<Boolean> getAvailabilityList() {
         return availability;
+
     }
+
+
 
 
 }

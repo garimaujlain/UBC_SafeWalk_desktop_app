@@ -73,7 +73,7 @@ public class VolunteerTest {
     @Test
     public void testDeleteDay() {
         ArrayList<Boolean> availability = new ArrayList<>(Arrays.asList(true, true, true, false, true, false, true));
-        Volunteer volunteer = new Volunteer("John Smith", 25, "Male", availability);
+        Volunteer volunteer = new Volunteer("Garima Smith", 28, "Male", availability);
         Volunteer.deleteDay(volunteer, "Tuesday");
         assertFalse(volunteer.getAvailability("Tuesday"));
     }
@@ -81,25 +81,25 @@ public class VolunteerTest {
     @Test
     public void testNewName() {
         ArrayList<Boolean> availability = new ArrayList<>(Arrays.asList(true, false, true, false, true, false, true));
-        Volunteer volunteer = new Volunteer("John Smith", 25, "Male", availability);
-        Volunteer.newName(volunteer, "Jane Doe");
-        assertEquals("Jane Doe", volunteer.getName());
+        Volunteer volunteer = new Volunteer("Garima Smith", 35, "Male", availability);
+        Volunteer.newName(volunteer, "Angad Singh");
+        assertEquals("Angad Singh", volunteer.getName());
     }
 
     @Test
     public void testNewAge() {
         ArrayList<Boolean> availability = new ArrayList<>(Arrays.asList(true, false, true, false, true, false, true));
-        Volunteer volunteer = new Volunteer("John Smith", 25, "Male", availability);
-        Volunteer.newAge(volunteer, 30);
-        assertEquals(30, volunteer.getAge());
+        Volunteer volunteer = new Volunteer("Dash Smith", 25, "Male", availability);
+        Volunteer.newAge(volunteer, 45);
+        assertEquals(45, volunteer.getAge());
     }
 
     @Test
     public void testNewGender() {
         ArrayList<Boolean> availability = new ArrayList<>(Arrays.asList(true, false, true, false, true, false, true));
         Volunteer volunteer = new Volunteer("John Smith", 25, "Male", availability);
-        Volunteer.newGender(volunteer, "Female");
-        assertEquals("Female", volunteer.getGender());
+        Volunteer.newGender(volunteer, "Male");
+        assertEquals("Male", volunteer.getGender());
     }
 
 

@@ -12,8 +12,8 @@ public class UserTest {
 
     @Test
     public void testGetVolunteer() {
-        User user = new User("David", 40, "male", "No");
-        assertEquals("No", user.getVolunteer());
+        User user = new User("David", 40, "male", "Yes");
+        assertEquals("Yes", user.getVolunteer());
     }
 
 

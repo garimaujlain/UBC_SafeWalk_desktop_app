@@ -10,13 +10,14 @@ import java.util.List;
 
 
 public class Main {
-    @SuppressWarnings("checkstyle:MethodLength")
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Volunteer volunteer = new Volunteer();
         Scheduler scheduler = new Scheduler();
         User user = new User();
         int input;
+
 
         while (true) {
             System.out.println("Hello, Welcome to SafeWalk!");
@@ -29,19 +30,21 @@ public class Main {
 
             if (input == 1) {
                 goVolunteer(scanner, volunteer, scheduler, user);
-                break;
+
             }
             if (input == 2) {
                 goClient(scanner, volunteer, scheduler, user);
-                break;
+
             }
             if (input == 3) {
                 System.out.println("Leaving so soon? We will miss you. Stay safe, goodbye!");
-                break;
+
             }
         }
     }
 
+
+    @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     private static void goVolunteer(Scanner scanner, Volunteer volunteer, Scheduler scheduler, User user) {
 
         List<Boolean> temp = new ArrayList<>();
@@ -75,7 +78,7 @@ public class Main {
                     temp.add(false);
                 }
 
-                System.out.println("Your availability:");
+
                 System.out.println("Are you available on Tuesday (y/n)");
                 input = scanner.nextLine();
                 String tue = input;
@@ -85,7 +88,7 @@ public class Main {
                     temp.add(false);
                 }
 
-                System.out.println("Your availability:");
+
                 System.out.println("Are you available on Wednesday (y/n)");
                 input = scanner.nextLine();
                 String wed = input;
@@ -96,7 +99,6 @@ public class Main {
                 }
 
 
-                System.out.println("Your availability:");
                 System.out.println("Are you available on Thurday (y/n)");
                 input = scanner.nextLine();
                 String thu = input;
@@ -107,7 +109,6 @@ public class Main {
                 }
 
 
-                System.out.println("Your availability:");
                 System.out.println("Are you available on Fridat (y/n)");
                 input = scanner.nextLine();
                 String fri = input;
@@ -118,7 +119,6 @@ public class Main {
                 }
 
 
-                System.out.println("Your availability:");
                 System.out.println("Are you available on Saturday (y/n)");
                 input = scanner.nextLine();
                 String sat = input;
@@ -129,7 +129,6 @@ public class Main {
                 }
 
 
-                System.out.println("Your availability:");
                 System.out.println("Are you available on Sunday (y/n)");
                 input = scanner.nextLine();
                 String sun = input;
@@ -138,24 +137,29 @@ public class Main {
                 } else {
                     temp.add(false);
                 }
-                System.out.println("Congratulation! you have been added to our system. We are happy to have you on our team. Stay safe!");
+                System.out.println("Congratulation! you have been added to our system"
+                        + ". We are happy to have you on our team. Stay safe!");
 
-                volunteer = new Volunteer(name, age, gender, temp);
-                scheduler.addVolunteer(volunteer);
-                break;
+                Volunteer x = new Volunteer(name, age, gender, temp);
+                scheduler.addVolunteer(x);
 
+                goBackMainMenu(scanner, volunteer, scheduler, user);
 
             } else {
+
                 goCurrentVolunteer(scanner, volunteer, scheduler, user);
             }
         }
 
     }
 
+
+
     private static void goCurrentVolunteer(Scanner scanner, Volunteer volunteer, Scheduler scheduler, User user) {
 
 
         int input;
+
 
         while (true) {
             System.out.println("Hello, welcome back to SafeWalk!");
@@ -167,25 +171,27 @@ public class Main {
             input = Integer.parseInt(scanner.nextLine());
 
             if (input == 1) {
-                addSlot(scanner, volunteer, scheduler, user);
-                break;
+                addSlot(scanner, scheduler, user);
+
             }
             if (input == 2) {
-                deleteSlot(scanner, volunteer, scheduler, user);
-                break;
+                deleteSlot(scanner, scheduler, user);
+
             }
             if (input == 3) {
                 editInfo(scanner, volunteer, scheduler, user);
-                break;
+
             }
 
             if (input == 4) {
                 System.out.println("Leaving so soon? We will miss you. Stay safe, goodbye!");
-                break;
+                goBackMainMenu(scanner, volunteer, scheduler, user);
+
             }
 
         }
     }
+
 
     private static void editInfo(Scanner scanner, Volunteer volunteer, Scheduler scheduler, User user) {
         int input;
@@ -199,24 +205,25 @@ public class Main {
             input = Integer.parseInt(scanner.nextLine());
             if (input == 1) {
                 editName(scanner, scheduler, user);
-                break;
+
             }
             if (input == 2) {
                 editAge(scanner, scheduler, user);
-                break;
+
             }
             if (input == 3) {
-                editGender(scanner);
-                break;
+                editGender(scanner, volunteer, scheduler, user);
+
             }
             if (input == 4) {
                 System.out.println("Leaving so soon? We will miss you. Stay safe, goodbye!");
-                break;
+                goBackMainMenu(scanner, volunteer, scheduler, user);
+
             }
         }
     }
 
-    private static void editGender(Scanner scanner) {
+    private static void editGender(Scanner scanner, Volunteer volunteer, Scheduler scheduler, User user) {
         String input;
 
         while (true) {
@@ -226,7 +233,7 @@ public class Main {
 
             String name = input;
 
-            Volunteer volunteer = Scheduler.findVolunteer(name);
+            volunteer = Scheduler.findVolunteer(name);
             System.out.println("Please mention the corrected gender");
             input = scanner.nextLine();
 
@@ -235,6 +242,7 @@ public class Main {
             Volunteer.newGender(volunteer, temp);
 
             System.out.println("Gender editted successfully");
+            goBackMainMenu(scanner, volunteer, scheduler, user);
 
         }
 
@@ -261,11 +269,12 @@ public class Main {
             Volunteer.newAge(volunteer, temp);
 
             System.out.println("Age editted successfully");
+            goBackMainMenu(scanner, volunteer, scheduler, user);
 
         }
     }
 
-    private static void editName(Scanner scanner, Scheduler scheduler, User user) {
+    public static void editName(Scanner scanner, Scheduler scheduler, User user) {
         String input;
 
         while (true) {
@@ -284,34 +293,13 @@ public class Main {
             Volunteer.newName(volunteer, temp);
 
             System.out.println("Name editted successfully");
+            goBackMainMenu(scanner, volunteer, scheduler, user);
 
         }
 
     }
 
-    private static void deleteSlot(Scanner scanner, Volunteer volunteer, Scheduler scheduler, User user) {
-        String input;
-        while (true) {
-            System.out.println("Hello, we are happy you want to put in more hours!");
-            System.out.println("Please enter your name:");
-            input = scanner.nextLine();
-
-            String name = input;
-
-            volunteer = Scheduler.findVolunteer(name);
-            System.out.println("Please add the day of week you are available:");
-            input = scanner.nextLine();
-
-            String day = input;
-
-            Volunteer.deleteDay(volunteer, day);
-
-            System.out.println("Shift added successfully");
-
-        }
-    }
-
-    private static void addSlot(Scanner scanner, Volunteer volunteer, Scheduler scheduler, User user) {
+    public static void deleteSlot(Scanner scanner, Scheduler scheduler, User user) {
         String input;
         while (true) {
             System.out.println("Something came up? delete your availability in one click!");
@@ -320,8 +308,34 @@ public class Main {
 
             String name = input;
 
-            volunteer = Scheduler.findVolunteer(name);
-            System.out.println("Please add the day of week you are no longer available:");
+            Volunteer volunteer = Scheduler.findVolunteer(name);
+            System.out.println("Please add the day of week you are not available:");
+            input = scanner.nextLine();
+
+            String day = input;
+
+            volunteer.deleteDay(volunteer, day);
+
+
+            System.out.println("Shift deleted successfully");
+            goBackMainMenu(scanner, volunteer, scheduler, user);
+
+        }
+    }
+
+    public static void addSlot(Scanner scanner, Scheduler scheduler, User user) {
+        String input;
+        while (true) {
+            System.out.println("We are happy you want to add more shifts! you can do so in one click!");
+            System.out.println("Please enter  name:");
+            input = scanner.nextLine();
+
+            String name = input;
+
+            Volunteer volunteer = Scheduler.findVolunteer(name);
+
+
+            System.out.println("Please add the day of week you are available:");
             input = scanner.nextLine();
 
             String day = input;
@@ -330,18 +344,19 @@ public class Main {
             volunteer.addDay(volunteer, day);
 
 
-            System.out.println("Shift deleted successfully");
+            System.out.println("Shift added successfully");
+            goBackMainMenu(scanner, volunteer, scheduler, user);
 
         }
     }
 
 
-    private static void goClient(Scanner scanner, Volunteer volunteer, Scheduler scheduler, User user) {
+    public static void goClient(Scanner scanner, Volunteer volunteer, Scheduler scheduler, User user) {
 
         int input;
 
         while (true) {
-            System.out.println("Hello, Welcome to SafeWalk! What can we do for you today?");
+            System.out.println("Something came up? don't worry, delete your shift in one click. ");
 
             System.out.println("1. Get a volunteer to walk you home safely");
             System.out.println("2. Quit");
@@ -349,16 +364,17 @@ public class Main {
 
             if (input == 1) {
                 pickVolunteer(scanner, volunteer, scheduler, user);
-                break;
+
             }
             if (input == 2) {
                 System.out.println("Leaving so soon? We will miss you. Stay safe, goodbye!");
-                break;
+                goBackMainMenu(scanner, volunteer, scheduler, user);
+
             }
         }
     }
 
-    private static void pickVolunteer(Scanner scanner, Volunteer volunteer, Scheduler scheduler, User user) {
+    public static void pickVolunteer(Scanner scanner, Volunteer volunteer, Scheduler scheduler, User user) {
         String input;
         while (true) {
             System.out.println("Your name:");
@@ -386,11 +402,40 @@ public class Main {
 
             // User.updateUser(name, age, gender, volun);
             System.out.println("You have successfully been assigned to" + volun);
+            goBackMainMenu(scanner, volunteer, scheduler, user);
 
 
         }
     }
 
+    private static void goBackMainMenu(Scanner scanner, Volunteer volunteer, Scheduler scheduler, User user) {
+
+        int input;
+
+        while (true) {
+            System.out.println("Hello, Welcome to SafeWalk!");
+
+            System.out.println("Are you:");
+            System.out.println("1. A volunteer");
+            System.out.println("2. A Client");
+            System.out.println("3. Quit");
+            input = Integer.parseInt(scanner.nextLine());
+
+            if (input == 1) {
+                goVolunteer(scanner, volunteer, scheduler, user);
+
+            }
+            if (input == 2) {
+                goClient(scanner, volunteer, scheduler, user);
+
+            }
+            if (input == 3) {
+                System.out.println("Leaving so soon? We will miss you. Stay safe, goodbye!");
+
+            }
+
+        }
+    }
 
 }
 
