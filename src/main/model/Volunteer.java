@@ -100,7 +100,8 @@ public class Volunteer {
 
     //MODIFIES: this
     //REQUIRES: volunteer is not null
-    //EFFECTS: changes the name of the given volunteer to inputted name, or prints error message if volunteer doesn;t exist
+    //EFFECTS: changes the name of the given volunteer to inputted name,
+    // or prints error message if volunteer doesn;t exist
     public static void newName(Volunteer volunteer, String name) {
 
         if (volunteer != null) {
@@ -121,7 +122,8 @@ public class Volunteer {
 
     //MODIFIES: this
     //REQUIRES: volunteer is not null
-    //EFFECTS: changes the age of the given volunteer to inputted age, or prints error message if volunteer doesn;t exist
+    //EFFECTS: changes the age of the given volunteer
+    //          to inputted age, or prints error message if volunteer doesn;t exist
     public static void newAge(Volunteer volunteer, Integer age) {
 
         if (volunteer != null) {
@@ -142,7 +144,8 @@ public class Volunteer {
 
     //MODIFIES: this
     //REQUIRES: volunteer is not null
-    //EFFECTS: changes the gender of the given volunteer to inputted gender, or prints error message if volunteer doesn;t exist
+    //EFFECTS: changes the gender of the given volunteer to
+    //          inputted gender, or prints error message if volunteer doesn;t exist
     public static void newGender(Volunteer volunteer, String gender) {
 
         if (volunteer != null) {
@@ -158,7 +161,8 @@ public class Volunteer {
 
 
     // MODIFIES: nothing
-    // EFFECTS: returns a boolean value representing availability of given volunteer on inputted day
+    // EFFECTS: returns a boolean value representing
+    //          availability of given volunteer on inputted day
     public Boolean getAvailability(String day) {
         switch (day) {
             case "Monday":
