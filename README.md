@@ -1,6 +1,6 @@
 # My Personal Project
 
-## A subtitle
+## UBC SafeWalk
 
 A *bulleted* list:
 - item 1

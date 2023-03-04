@@ -6,6 +6,9 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
+//tests for user class
+
 public class UserTest {
     @Test
     public void testGetName() {
@@ -15,7 +18,7 @@ public class UserTest {
 
     @Test
     public void testGetVolunteer() {
-        User user = new User("David", 40, "male", "Yes");
+        User user = new User("Dave", 40, "male", "Yes");
         assertEquals("Yes", user.getAssigned());
     }
 
@@ -52,9 +55,6 @@ public class UserTest {
 
 
     }
-
-
-
 
 
 }

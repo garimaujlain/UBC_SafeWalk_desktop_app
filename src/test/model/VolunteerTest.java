@@ -8,14 +8,17 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+
+// tests for volunteer class
+
 public class VolunteerTest {
 
     @Test
     public void testVolunteer1() {
         ArrayList<Boolean> availability = new ArrayList<>(Arrays.asList(true, false, true, false, true, false, true));
-        Volunteer volunteer = new Volunteer("John Doe", 25, "Male", availability);
+        Volunteer volunteer = new Volunteer("John Dane", 25, "Male", availability);
 
-        assertEquals(volunteer.getName(), "John Doe");
+        assertEquals(volunteer.getName(), "John Dane");
         assertEquals(volunteer.getAge(), 25);
         assertEquals(volunteer.getGender(), "Male");
         assertTrue(volunteer.getAvailability("Monday"));
@@ -38,28 +41,28 @@ public class VolunteerTest {
     @Test
     public void testGetName() {
         ArrayList<Boolean> availability = new ArrayList<>(Arrays.asList(true, false, true, false, true, false, true));
-        Volunteer volunteer = new Volunteer("John Smith", 25, "Male", availability);
-        assertEquals("John Smith", volunteer.getName());
+        Volunteer volunteer = new Volunteer("John Singh", 22, "Male", availability);
+        assertEquals("John Singh", volunteer.getName());
     }
 
     @Test
     public void testGetAge() {
         ArrayList<Boolean> availability = new ArrayList<>(Arrays.asList(true, false, true, false, true, false, true));
-        Volunteer volunteer = new Volunteer("John Smith", 25, "Male", availability);
-        assertEquals(25, volunteer.getAge());
+        Volunteer volunteer = new Volunteer("John Singh", 24, "Male", availability);
+        assertEquals(24, volunteer.getAge());
     }
 
     @Test
     public void testGetGender() {
         ArrayList<Boolean> availability = new ArrayList<>(Arrays.asList(true, false, true, false, true, false, true));
-        Volunteer volunteer = new Volunteer("John Smith", 25, "Male", availability);
-        assertEquals("Male", volunteer.getGender());
+        Volunteer volunteer = new Volunteer("Raj Smith", 25, "Female", availability);
+        assertEquals("Female", volunteer.getGender());
     }
 
     @Test
     public void testGetAvailability() {
         ArrayList<Boolean> availability = new ArrayList<>(Arrays.asList(true, false, true, false, true, false, true));
-        Volunteer volunteer = new Volunteer("John Smith", 25, "Male", availability);
+        Volunteer volunteer = new Volunteer("John Smith", 33, "Male", availability);
         assertTrue(volunteer.getAvailability("Monday"));
         assertFalse(volunteer.getAvailability("Tuesday"));
         assertTrue(volunteer.getAvailability("Wednesday"));
@@ -77,16 +80,18 @@ public class VolunteerTest {
         ArrayList<Boolean> availability2 = new ArrayList<>(Arrays.asList(true, true, true, false, true, false, true));
 
 
-        Volunteer volunteer1 = new Volunteer("John Smith", 25, "Male", availability1);
+        Volunteer volunteer1 = new Volunteer("John Dave", 25, "Male", availability1);
         Volunteer volunteer2 = new Volunteer("Garima Singh", 46, "Male", availability2);
         Volunteer.addDay(volunteer1, "Monday");
         assertTrue(volunteer1.getAvailability("Monday"));
+
 
         Volunteer.addDay(volunteer1, "Wednesday");
         assertTrue(volunteer1.getAvailability("Wednesday"));
 
         Volunteer.addDay(volunteer2, "Monday");
         assertTrue(volunteer2.getAvailability("Monday"));
+
 
         Volunteer.addDay(volunteer2, "Saturday");
         assertTrue(volunteer2.getAvailability("Saturday"));
