@@ -68,8 +68,12 @@ public class Main {
             System.out.println("Hello, Welcome to SafeWalk! Are you a new volunteer?(y/n)");
             input = scanner.nextLine();
 
-            //if input is y, new volunteer is asked to input all their details
+
+
             if (input.equalsIgnoreCase("y")) {
+                //if input is y, new volunteer is asked to input all their details
+                //user case 1: apply to be a volunteer
+
                 System.out.println("We are excited to have you on our team! Please fill out the following details: ");
                 System.out.println("Your name:");
                 input = scanner.nextLine();
@@ -192,18 +196,21 @@ public class Main {
 
             //if option is 1, goes to addSlot, which allows exisitng volunteer to add a shift
             if (input == 1) {
+                //user case4: add availability as an exisitng volunteer
                 addSlot(scanner, scheduler, user);
 
             }
 
             //if option is 2, goes to deleteslot, which allows exisitng volunteer to delete a shift
             if (input == 2) {
+                //user case3: delete availability as an exisitng volunteer
                 deleteSlot(scanner, scheduler, user);
 
             }
 
             //if option is 3, goes to editInfo, which allows exisitng volunteer to edit their information
             if (input == 3) {
+                //user case2: edit personal information as an exisitng volunteer
                 editInfo(scanner, volunteer, scheduler, user);
 
             }
@@ -441,6 +448,8 @@ public class Main {
         //MODIFIES: given user
         //EFFECTS: sets the assigned parameter of given user with their selection of volunteer
 
+
+        //user case5: as a client, choose volunteer to walk me home safely on required day
         String input;
         while (true) {
             System.out.println("Your name:");
