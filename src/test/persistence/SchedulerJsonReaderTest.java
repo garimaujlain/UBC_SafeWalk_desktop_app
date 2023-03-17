@@ -12,7 +12,7 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-
+//adapted from JsonSerializationDemo
 public class SchedulerJsonReaderTest {
     private SchedulerJsonReader reader;
 
@@ -62,7 +62,7 @@ public class SchedulerJsonReaderTest {
             testScheduler.addVolunteer(volunteer2);
 
 
-            // Read the written cookbook file and compare it to the original cookbook
+            // Read the written scheduler file and compare it to the original cookbook
             Scheduler writtenScheduler = SchedulerJsonReader.read("./data/testReaderGeneralScheduler.json");
             assertEquals(writtenScheduler.getVolunteers().size(), 0);
             assertEquals(writtenScheduler.getVolunteers().get(0).getName(), "John");

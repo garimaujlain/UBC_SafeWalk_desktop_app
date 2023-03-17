@@ -76,19 +76,22 @@ public class Main {
         }
     }
 
+    //adapted from JsonSerializationDemo
     // EFFECTS: saves the scheduler to file
     private static void saveApp(Scanner scanner, Volunteer volunteer, Scheduler scheduler, User user)
             throws JSONException, IOException {
         try {
             SchedulerJsonWriter.write(scheduler, "./data/temp.json");
             System.out.println("Session saved!");
-            goBackMainMenu(scanner, volunteer, scheduler, user);
+            System.exit(0);
+
         } catch (IOException e) {
             System.out.println("Error saving session");
 
         }
     }
 
+    //adapted from JsonSerializationDemo
     // MODIFIES: this
     // EFFECTS: loads scheduler from file
     private static void loadApp(Scanner scanner, Volunteer volunteer, Scheduler scheduler, User user)
