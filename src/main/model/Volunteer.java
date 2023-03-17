@@ -1,5 +1,9 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -186,4 +190,29 @@ public class Volunteer {
         return availability;
 
     }
+
+    public static Volunteer fromJson(JSONObject json) throws JSONException {
+        String name = json.getString("name");
+        int age = json.getInt("age");
+        String gender = json.getString("gender");
+        JSONArray availabilityJsonArray = json.getJSONArray("availability");
+        List<Boolean> availability = new ArrayList<>();
+        for (int i = 0; i < availabilityJsonArray.length(); i++) {
+            availability.add(availabilityJsonArray.getBoolean(i));
+        }
+        return new Volunteer(name, age, gender, availability);
+    }
+
+    public JSONObject toJson() throws JSONException {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("gender", gender);
+        json.put("age", age);
+
+        JSONArray availabilityJsonArray = new JSONArray(availability);
+        json.put("availability", availabilityJsonArray);
+
+        return json;
+    }
+
 }

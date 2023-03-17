@@ -93,7 +93,7 @@ public class Scheduler {
 
 
     // return list of volunteers
-    public static List<Volunteer> getVolunteers() {
+    public List<Volunteer> getVolunteers() {
         return volunteers;
     }
 
@@ -101,7 +101,14 @@ public class Scheduler {
         Scheduler.volunteers = volunteers;
 
     }
-
+//
+//    public JSONObject toJson() throws Exception {
+//        JSONObject json = new JSONObject();
+//
+//        json.put("volunteers", volunteers);
+//
+//        return json;
+//    }
 
 }
 
