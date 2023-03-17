@@ -1,13 +1,12 @@
 package model;
 
-import java.util.*;
-
-
-
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
 public class Scheduler {
     private static List<Volunteer> volunteers;
-
 
 
     static List<String> daysOfWeek = Arrays.asList("Monday", "Tuesday", "Wednesday",
@@ -60,6 +59,9 @@ public class Scheduler {
     }
 
 
+
+
+
     //finds a volunteer in (list of volunteers) using string name as input
     //MODIFIES: nothing
     //EFFECTS: Returns Volunteer within list of volunteers with given name if found, else returns null
@@ -75,8 +77,7 @@ public class Scheduler {
     }
 
 
-
-     // gives a list of volunteers available on a particular day of the week
+    // gives a list of volunteers available on a particular day of the week
     //Modifies: nothing
     // Effects: Returns list of the names of volunteers available on given day of week
     public static List<String> onDuty(String day) {
@@ -92,9 +93,16 @@ public class Scheduler {
 
 
     // return list of volunteers
-    public List<Volunteer> getVolunteers() {
+    public static List<Volunteer> getVolunteers() {
         return volunteers;
     }
+
+    public void setVolunteers(List<Volunteer> volunteers) {
+        Scheduler.volunteers = volunteers;
+
+    }
+
+
 }
 
 

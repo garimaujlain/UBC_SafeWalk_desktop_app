@@ -3,12 +3,11 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 public class Volunteer {
     private String name;
     private String gender;
     private int age;
+
 
     private final ArrayList<Boolean> availability;
 
@@ -69,7 +68,6 @@ public class Volunteer {
     }
 
 
-
     // deleted availability (true/false -> false) for a volunteer on the inputted day
     // MODIFIES: this
     // EFFECTS: for inputted day of week, turns availability of given volunteer to boolean value false
@@ -95,7 +93,6 @@ public class Volunteer {
     public void setName(String name) {
         this.name = name;
     }
-
 
 
     //MODIFIES: this
@@ -134,6 +131,7 @@ public class Volunteer {
         }
     }
 
+
     // Changes the gender of given Volunteer
     // MODIFIES: this
     // EFFECTS: Changes the gender of the Volunteer to the inputted gender
@@ -155,9 +153,6 @@ public class Volunteer {
 
         }
     }
-
-
-
 
 
     // MODIFIES: nothing
@@ -191,8 +186,4 @@ public class Volunteer {
         return availability;
 
     }
-
-
-
-
 }
