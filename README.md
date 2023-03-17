@@ -21,5 +21,6 @@ safer and more comfortable environment for UBC students.
 - As a user, If I am an existing Volunteer, I want to be able to edit my personal information such as my Name, Age, and Gender.
 - As a user, If I am an existing Volunteer, I want to be able to edit my availability and delete shifts in case something unexpected comes up.
 - As a user, If I am an existing Volunteer, I want to be able to edit my availability and add shifts in case I find extra free time during the week.
-- As a user, If I am a client, I want to be able to
-   request company from a volunteer who is available on my required day so that I can get home safely and feel more secure.
+- As a user, If I am a client, I want to be able to request company from a volunteer who is available on my required day so that I can get home safely and feel more secure. 
+- As a user, If I am a volunteer, I want to be able to pick-up where I left off, and save my availability, and personal information, rather than filling out the form every time. 
+- As a user, I want to be able to load my application.

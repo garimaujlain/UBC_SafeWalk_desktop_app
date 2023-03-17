@@ -54,14 +54,16 @@ public class Main {
             }
             if (input == 3) {
 
-                //quits application
-                loadApp(scheduler);
+                //loads application
+                loadApp(scanner, volunteer, scheduler, user);
+
 
             }
             if (input == 4) {
 
-                //quits application
-                saveApp(scheduler);
+                //saves application
+                saveApp(scanner, volunteer, scheduler, user);
+
 
             }
             if (input == 5) {
@@ -74,27 +76,30 @@ public class Main {
         }
     }
 
-    private static void saveApp(Scheduler scheduler) throws JSONException, IOException {
+    // EFFECTS: saves the scheduler to file
+    private static void saveApp(Scanner scanner, Volunteer volunteer, Scheduler scheduler, User user)
+            throws JSONException, IOException {
         try {
             SchedulerJsonWriter.write(scheduler, "./data/temp.json");
             System.out.println("Session saved!");
-            System.exit(0);
+            goBackMainMenu(scanner, volunteer, scheduler, user);
         } catch (IOException e) {
             System.out.println("Error saving session");
-            System.exit(0);
+
         }
     }
 
     // MODIFIES: this
-    // EFFECTS: loads cookbook from file
-    private static void loadApp(Scheduler scheduler) throws JSONException {
+    // EFFECTS: loads scheduler from file
+    private static void loadApp(Scanner scanner, Volunteer volunteer, Scheduler scheduler, User user)
+            throws JSONException {
         try {
             scheduler = SchedulerJsonReader.read("./data/temp.json");
             System.out.println("Session loaded");
-            System.exit(0);
+            goBackMainMenu(scanner, volunteer, scheduler, user);
         } catch (IOException e) {
             System.out.println("Error loading cookbook session");
-            System.exit(0);
+
         }
     }
 
@@ -269,13 +274,13 @@ public class Main {
         }
     }
 
+    //MODIFIES: parameter of given volunteer
+    //EFFECTS: allows volunteer to edit their personal information.
+    //REQUIRES: none
 
     private static void editInfo(Scanner scanner, Volunteer volunteer, Scheduler scheduler, User user)
             throws JSONException, IOException {
 
-        //MODIFIES: parameter of given volunteer
-        //EFFECTS: allows volunteer to edit their personal information.
-        //REQUIRES: none
 
         int input;
         while (true) {
@@ -306,11 +311,12 @@ public class Main {
         }
     }
 
+    //MODIFIES: gender of given volunteer
+    //EFFECTS: allows volunteer to edit their gender
+    //REQUIRES: none
     private static void editGender(Scanner scanner, Volunteer volunteer, Scheduler scheduler, User user)
             throws JSONException, IOException {
-        //MODIFIES: gender of given volunteer
-        //EFFECTS: allows volunteer to edit their gender
-        //REQUIRES: none
+
         String input;
 
         while (true) {
@@ -335,11 +341,12 @@ public class Main {
 
     }
 
+    //MODIFIES: age of given volunteer
+    //EFFECTS: allows volunteer to edit their age.
+    //REQUIRES: none
+
     private static void editAge(Scanner scanner, Scheduler scheduler, User user) throws JSONException, IOException {
 
-        //MODIFIES: age of given volunteer
-        //EFFECTS: allows volunteer to edit their age.
-        //REQUIRES: none
 
         String input;
 
@@ -365,11 +372,13 @@ public class Main {
         }
     }
 
+
+    //MODIFIES: name of volunteer
+    //EFFECTS: allows volunteer to edit their name
+    //REQUIRES: none
     public static void editName(Scanner scanner, Scheduler scheduler, User user) throws JSONException, IOException {
 
-        //MODIFIES: name of volunteer
-        //EFFECTS: allows volunteer to edit their name
-        //REQUIRES: none
+
         String input;
 
         while (true) {
@@ -394,11 +403,11 @@ public class Main {
 
     }
 
+    //MODIFIES: the availability of given volunteer
+    //EFFECTS: updates the volunteer's availability in the scheduler by deleting given day from their schedule
+    //REQUIRES: none
     public static void deleteSlot(Scanner scanner, Scheduler scheduler, User user) throws JSONException, IOException {
 
-        //MODIFIES: the availability of given volunteer
-        //EFFECTS: updates the volunteer's availability in the scheduler by deleting given day from their schedule
-        //REQUIRES: none
 
         String input;
         while (true) {
@@ -424,11 +433,12 @@ public class Main {
         }
     }
 
+    //MODIFIES: the availability of given volunteer
+    //EFFECTS: updates the volunteer's availability in the scheduler by adding given day from their schedule
+    //REQUIRES: none
+
     public static void addSlot(Scanner scanner, Scheduler scheduler, User user) throws JSONException, IOException {
 
-        //MODIFIES: the availability of given volunteer
-        //EFFECTS: updates the volunteer's availability in the scheduler by adding given day from their schedule
-        //REQUIRES: none
 
         String input;
         while (true) {
@@ -488,11 +498,10 @@ public class Main {
         }
     }
 
+    //MODIFIES: given user
+    //EFFECTS: sets the assigned parameter of given user with their selection of volunteer
     public static void pickVolunteer(Scanner scanner, Volunteer volunteer, Scheduler scheduler, User user)
             throws JSONException, IOException {
-
-        //MODIFIES: given user
-        //EFFECTS: sets the assigned parameter of given user with their selection of volunteer
 
 
         //user case5: as a client, choose volunteer to walk me home safely on required day
@@ -524,13 +533,16 @@ public class Main {
             input = scanner.nextLine();
             String volun = input;
 
-            System.out.println("You have successfully been assigned to" + volun);
+            System.out.println("You have successfully been assigned to" + volun
+                    + "please contact them on their cellphone number to further plan your travel!");
             goBackMainMenu(scanner, volunteer, scheduler, user);
 
 
         }
     }
 
+
+    //goes to main menu
     private static void goBackMainMenu(Scanner scanner, Volunteer volunteer, Scheduler scheduler, User user)
             throws JSONException, IOException {
 
@@ -562,13 +574,13 @@ public class Main {
         if (input == 3) {
 
             //quits application
-            loadApp(scheduler);
+            loadApp(scanner, volunteer, scheduler, user);
 
         }
         if (input == 4) {
 
             //quits application
-            saveApp(scheduler);
+            saveApp(scanner, volunteer, scheduler, user);
 
         } else if (input == 5) {
 

@@ -1,8 +1,6 @@
 package model;
 
 
-import java.util.List;
-
 public class User {
     private String name;
     private int age;
@@ -11,14 +9,6 @@ public class User {
 
 
     // Constructor for  User class that takes (string, int, string, string) input
-    public User(String name, int age, String gender, String volunteer, List<Volunteer> volunteers) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
-        this.volunteer = volunteer;
-
-    }
-
 
 
 

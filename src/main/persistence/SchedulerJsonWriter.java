@@ -11,21 +11,21 @@ import java.io.IOException;
 
 //adapted from JsonSerializationDemo
 public class SchedulerJsonWriter {
-    //private static final String FILENAME = "./data/cookbook.json";
+    //private static final String FILENAME = "./data/temp.json";
 
-    //public static void write(Cookbook cookbook) throws IOException {
-    //    write(cookbook, FILENAME);
+    //public static void write(Scheduler scheduler) throws Exception {
+    //    write(scheduler, FILENAME);
     //}
 
     public static void write(Scheduler scheduler, String filePath) throws IOException, JSONException {
-        // Create a JSON array of recipe JSON objects
+        // Create a JSON array of volunteers JSON objects
         JSONArray schedulerJsonArray = new JSONArray();
         for (Volunteer volunteer : scheduler.getVolunteers()) {
             JSONObject volunteerJsonObject = volunteer.toJson();
             schedulerJsonArray.put(volunteerJsonObject);
         }
 
-        // Create a JSON object with the recipe array
+        // Create a JSON object with the volunteer array
         JSONObject json = new JSONObject();
         json.put("volunteers", schedulerJsonArray);
 

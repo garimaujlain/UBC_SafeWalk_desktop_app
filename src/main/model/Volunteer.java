@@ -191,6 +191,12 @@ public class Volunteer {
 
     }
 
+
+    //Converts the JSON string to object of the given class.
+    //MODIFIES: this
+    //REQUIRES: volunteer is not null
+    //EFFECTS: changes the gender of the given volunteer to
+    //          inputted gender, or prints error message if volunteer doesn;t exist
     public static Volunteer fromJson(JSONObject json) throws JSONException {
         String name = json.getString("name");
         int age = json.getInt("age");
@@ -203,6 +209,7 @@ public class Volunteer {
         return new Volunteer(name, age, gender, availability);
     }
 
+    //Converts the object to its JSON representation.
     public JSONObject toJson() throws JSONException {
         JSONObject json = new JSONObject();
         json.put("name", name);

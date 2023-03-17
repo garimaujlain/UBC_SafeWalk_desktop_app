@@ -12,9 +12,9 @@ import java.nio.file.Files;
 
 //adapted from JsonSerializationDemo
 public class SchedulerJsonReader {
-    //private static final String FILENAME = "./data/cookbook.json";
+    //private static final String FILENAME = "./data/temp.json";
 
-    // public static Cookbook read() throws IOException {
+    // public static Scheduler read() throws Exception {
     //     return read(FILENAME);
     // }
 
@@ -24,7 +24,7 @@ public class SchedulerJsonReader {
         String jsonStr = new String(Files.readAllBytes(file.toPath()));
         JSONObject json = new JSONObject(jsonStr);
 
-        // Create a cookbook from the recipe JSON objects
+        // Create a scheduler from the volunteer JSON objects
         Scheduler scheduler = new Scheduler();
         JSONArray schedulerJsonArray = json.getJSONArray("volunteers");
         for (int i = 0; i < schedulerJsonArray.length(); i++) {

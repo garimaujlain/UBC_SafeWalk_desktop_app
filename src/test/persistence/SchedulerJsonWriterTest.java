@@ -38,8 +38,8 @@ public class SchedulerJsonWriterTest {
         try {
             Scheduler testScheduler = new Scheduler();
 
-            SchedulerJsonWriter.write(testScheduler, "./data/testWriterEmptyCookbook.json");
-            Scheduler scheduler = SchedulerJsonReader.read("./data/testWriterEmptyCookbook.json");
+            SchedulerJsonWriter.write(testScheduler, "./data/testWriterEmptyScheduler.json");
+            Scheduler scheduler = SchedulerJsonReader.read("./data/testWriterEmptyScheduler.json");
             assertEquals(0, scheduler.getVolunteers().size());
         } catch (IOException | JSONException e) {
             fail("Exception should not have been thrown");
@@ -60,10 +60,10 @@ public class SchedulerJsonWriterTest {
 
             scheduler.addVolunteer(volunteer1);
             scheduler.addVolunteer(volunteer2);
-            SchedulerJsonWriter.write(scheduler, "./data/testWriterGeneralCookbook.json");
+            SchedulerJsonWriter.write(scheduler, "./data/testWriterGeneralScheduler.json");
 
             // Read the written cookbook file and compare it to the original cookbook
-            Scheduler scheduler1 = SchedulerJsonReader.read("./data/testWriterGeneralCookbook.json");
+            Scheduler scheduler1 = SchedulerJsonReader.read("./data/testWriterGeneralScheduler.json");
             assertEquals(scheduler.getVolunteers().size(), scheduler1.getVolunteers().size());
             assertEquals(scheduler.getVolunteers().get(0).getName(), scheduler1.getVolunteers().get(0).getName());
             assertEquals(scheduler.getVolunteers().get(1).getName(), scheduler1.getVolunteers().get(1).getName());

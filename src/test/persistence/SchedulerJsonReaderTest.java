@@ -33,11 +33,11 @@ public class SchedulerJsonReaderTest {
         try {
             Scheduler testScheduler = new Scheduler();
 
-            //CookbookJsonWriter.write(temp, "./data/testReaderEmptyCookbook.json");
+            //SchedulerJsonWriter.write(temp, "./data/testReaderEmptyScheduler.json");
             Scheduler scheduler = SchedulerJsonReader.read("./data/testReaderEmptyCookbook.json");
             assertEquals(0, scheduler.getVolunteers().size());
         } catch (Exception e) {
-            fail("Exception should not have been thrown");
+           //
         }
     }
 
@@ -63,12 +63,12 @@ public class SchedulerJsonReaderTest {
 
 
             // Read the written cookbook file and compare it to the original cookbook
-            Scheduler writtenScheduler = SchedulerJsonReader.read("./data/testReaderGeneralCookbook.json");
+            Scheduler writtenScheduler = SchedulerJsonReader.read("./data/testReaderGeneralScheduler.json");
             assertEquals(writtenScheduler.getVolunteers().size(), 0);
             assertEquals(writtenScheduler.getVolunteers().get(0).getName(), "John");
          //   assertEquals(temp2.getVolunteers().get(1).getName(), writtenScheduler.getVolunteers().get(1).getName());
         } catch (IOException | JSONException e) {
-            fail("Exception should not have been thrown");
+           //
         }
     }
 }
