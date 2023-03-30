@@ -19,7 +19,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
  * @author ahmed
  */
 public class MainFrame extends javax.swing.JFrame {
@@ -208,7 +207,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel4.setText("Your Gender:");
 
-        Gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "NA" }));
+        Gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Male", "Female", "NA"}));
 
         availabvar.setText("Your Availability:");
 
@@ -278,7 +277,7 @@ public class MainFrame extends javax.swing.JFrame {
                                 .addContainerGap())
         );
 
-        days.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" }));
+        days.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}));
 
         javax.swing.GroupLayout startpanelLayout = new javax.swing.GroupLayout(startpanel);
         startpanel.setLayout(startpanelLayout);
@@ -459,11 +458,13 @@ public class MainFrame extends javax.swing.JFrame {
         days.setVisible(true);
         availabvar.setText("The day you need a Volunteer:");
     }//GEN-LAST:event_clibtnActionPerformed
+
     public void clear() {
         Name.setText("");
         Age.setText("");
 
     }
+
     private void savevolbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savevolbtnActionPerformed
         startpanel.setVisible(false);
         DefaultListModel demoList = new DefaultListModel();
@@ -521,7 +522,9 @@ public class MainFrame extends javax.swing.JFrame {
             List<String> temp = Scheduler.onDuty(days.getSelectedItem().toString());
             System.out.println(temp);
             startpanel.setVisible(false);
-            demoList.addAll(temp);
+            for (int i = 0; i < temp.size(); i++) {
+                demoList.add(i, temp.get(i));
+            }
             volunteerlist.setModel(demoList);
             pickvolpanel.setVisible(true);
 
