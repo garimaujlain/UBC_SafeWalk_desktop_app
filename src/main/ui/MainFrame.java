@@ -2,6 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+
 package ui;
 
 import model.Scheduler;
@@ -41,8 +42,9 @@ public class MainFrame extends javax.swing.JFrame {
 
     }
 
-    @SuppressWarnings("unchecked")
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings", "checkstyle:LineLength"})
     private void initComponents() {
 
         diag = new javax.swing.JDialog();
@@ -52,19 +54,19 @@ public class MainFrame extends javax.swing.JFrame {
         adddaybtn = new javax.swing.JButton();
         remdaybtn = new javax.swing.JButton();
         returnbtn = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jlabel1 = new javax.swing.JLabel();
         volbtn = new javax.swing.JButton();
         clibtn = new javax.swing.JButton();
         loadbtn = new javax.swing.JButton();
         savebtn = new javax.swing.JButton();
         exitbtn = new javax.swing.JButton();
         startpanel = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        Name = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        Age = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        Gender = new javax.swing.JComboBox<>();
+        jlabel2 = new javax.swing.JLabel();
+        name = new javax.swing.JTextField();
+        jlabel3 = new javax.swing.JLabel();
+        age = new javax.swing.JTextField();
+        jlabel4 = new javax.swing.JLabel();
+        gender = new javax.swing.JComboBox<>();
         availabvar = new javax.swing.JLabel();
         savevolbtn = new javax.swing.JButton();
         daysgrp = new javax.swing.JPanel();
@@ -77,11 +79,11 @@ public class MainFrame extends javax.swing.JFrame {
         saturdaycheck = new javax.swing.JCheckBox();
         days = new javax.swing.JComboBox<>();
         pickvolpanel = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jlabel5 = new javax.swing.JLabel();
+        jscrollpane1 = new javax.swing.JScrollPane();
         volunteerlist = new javax.swing.JList<>();
         pickvol = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jbutton1 = new javax.swing.JButton();
 
         diag.setMinimumSize(new java.awt.Dimension(595, 363));
         diag.setResizable(false);
@@ -163,8 +165,8 @@ public class MainFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
-        jLabel1.setText("Welcome To SafeWalk!");
+        jlabel1.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+        jlabel1.setText("Welcome To SafeWalk!");
 
         volbtn.setText("Start As a new Volunteer");
         volbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -201,13 +203,13 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Your Name:");
+        jlabel2.setText("Your Name:");
 
-        jLabel3.setText("Your Age :");
+        jlabel3.setText("Your Age :");
 
-        jLabel4.setText("Your Gender:");
+        jlabel4.setText("Your Gender:");
 
-        Gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Male", "Female", "NA"}));
+        gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Male", "Female", "NA"}));
 
         availabvar.setText("Your Availability:");
 
@@ -286,16 +288,16 @@ public class MainFrame extends javax.swing.JFrame {
                         .addGroup(startpanelLayout.createSequentialGroup()
                                 .addGap(30, 30, 30)
                                 .addGroup(startpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel2)
-                                        .addComponent(jLabel3)
-                                        .addComponent(jLabel4)
+                                        .addComponent(jlabel2)
+                                        .addComponent(jlabel3)
+                                        .addComponent(jlabel4)
                                         .addComponent(availabvar))
                                 .addGap(45, 45, 45)
                                 .addGroup(startpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(startpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(Name)
-                                                .addComponent(Age)
-                                                .addComponent(Gender, 0, 165, Short.MAX_VALUE))
+                                                .addComponent(name)
+                                                .addComponent(age)
+                                                .addComponent(gender, 0, 165, Short.MAX_VALUE))
                                         .addGroup(startpanelLayout.createSequentialGroup()
                                                 .addComponent(days, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -310,16 +312,16 @@ public class MainFrame extends javax.swing.JFrame {
                         .addGroup(startpanelLayout.createSequentialGroup()
                                 .addGap(16, 16, 16)
                                 .addGroup(startpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel2)
-                                        .addComponent(Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jlabel2)
+                                        .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(startpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel3)
-                                        .addComponent(Age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jlabel3)
+                                        .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(startpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel4)
-                                        .addComponent(Gender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jlabel4)
+                                        .addComponent(gender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(startpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(startpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -331,9 +333,9 @@ public class MainFrame extends javax.swing.JFrame {
                                 .addContainerGap(53, Short.MAX_VALUE))
         );
 
-        jLabel5.setText("Pick a Volunteer :");
+        jlabel5.setText("Pick a Volunteer :");
 
-        jScrollPane1.setViewportView(volunteerlist);
+        jscrollpane1.setViewportView(volunteerlist);
 
         pickvol.setText("Pick Selected Volunteer");
         pickvol.addActionListener(new java.awt.event.ActionListener() {
@@ -349,32 +351,32 @@ public class MainFrame extends javax.swing.JFrame {
                         .addGroup(pickvolpanelLayout.createSequentialGroup()
                                 .addGap(24, 24, 24)
                                 .addGroup(pickvolpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel5)
+                                        .addComponent(jlabel5)
                                         .addGroup(pickvolpanelLayout.createSequentialGroup()
                                                 .addGap(6, 6, 6)
                                                 .addGroup(pickvolpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addGroup(pickvolpanelLayout.createSequentialGroup()
                                                                 .addGap(6, 6, 6)
                                                                 .addComponent(pickvol))
-                                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                        .addComponent(jscrollpane1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addContainerGap(147, Short.MAX_VALUE))
         );
         pickvolpanelLayout.setVerticalGroup(
                 pickvolpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(pickvolpanelLayout.createSequentialGroup()
                                 .addGap(25, 25, 25)
-                                .addComponent(jLabel5)
+                                .addComponent(jlabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jscrollpane1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(pickvol)
                                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
-        jButton1.setText("Start as an existing Volunteer");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jbutton1.setText("Start as an existing Volunteer");
+        jbutton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jbutton1Actionperformed(evt);
             }
         });
 
@@ -386,7 +388,7 @@ public class MainFrame extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGap(282, 282, 282)
-                                                .addComponent(jLabel1)
+                                                .addComponent(jlabel1)
                                                 .addGap(0, 0, Short.MAX_VALUE))
                                         .addGroup(layout.createSequentialGroup()
                                                 .addContainerGap()
@@ -396,7 +398,7 @@ public class MainFrame extends javax.swing.JFrame {
                                                         .addComponent(loadbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                         .addComponent(clibtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                         .addComponent(volbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                        .addComponent(jbutton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                                 .addGap(163, 163, 163)
                                                 .addComponent(startpanel, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
@@ -407,7 +409,7 @@ public class MainFrame extends javax.swing.JFrame {
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
-                                .addComponent(jLabel1)
+                                .addComponent(jlabel1)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGap(60, 60, 60)
@@ -415,7 +417,7 @@ public class MainFrame extends javax.swing.JFrame {
                                                         .addGroup(layout.createSequentialGroup()
                                                                 .addComponent(volbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(jbutton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                                 .addComponent(clibtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -432,40 +434,58 @@ public class MainFrame extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
-    private void volbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volbtnActionPerformed
+    // </editor-fold>//GEN-END:initComponents
+
+    private void volbtnActionPerformed(java.awt.event.ActionEvent evt) {
+        //GEN-FIRST:event_volbtnActionPerformed
         type = "V";
         startpanel.setVisible(true);
         daysgrp.setVisible(true);
         days.setVisible(false);
         availabvar.setText("Your Availability:");
 
-    }//GEN-LAST:event_volbtnActionPerformed
+    }
 
-    private void exitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitbtnActionPerformed
+    //GEN-LAST:event_volbtnActionPerformed
+
+    private void exitbtnActionPerformed(java.awt.event.ActionEvent evt) {
+        //GEN-FIRST:event_exitbtnActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_exitbtnActionPerformed
+    }
 
-    private void mondaycheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mondaycheckActionPerformed
+    //GEN-LAST:event_exitbtnActionPerformed
+
+    private void mondaycheckActionPerformed(java.awt.event.ActionEvent evt) {
+
+        //GEN-FIRST:event_mondaycheckActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_mondaycheckActionPerformed
+    }
 
-    private void clibtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clibtnActionPerformed
+    //GEN-LAST:event_mondaycheckActionPerformed
+
+    private void clibtnActionPerformed(java.awt.event.ActionEvent evt) {
+
+        //GEN-FIRST:event_clibtnActionPerformed
         type = "C";
         startpanel.setVisible(true);
         daysgrp.setVisible(false);
         days.setVisible(true);
         availabvar.setText("The day you need a Volunteer:");
-    }//GEN-LAST:event_clibtnActionPerformed
+    }
+
+    //GEN-LAST:event_clibtnActionPerformed
 
     public void clear() {
-        Name.setText("");
-        Age.setText("");
+        name.setText("");
+        age.setText("");
 
     }
 
-    private void savevolbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savevolbtnActionPerformed
+    @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
+    private void savevolbtnActionPerformed(java.awt.event.ActionEvent evt) {
+        //GEN-FIRST:event_savevolbtnActionPerformed
         startpanel.setVisible(false);
         DefaultListModel demoList = new DefaultListModel();
 
@@ -509,7 +529,8 @@ public class MainFrame extends javax.swing.JFrame {
                 temp.add(false);
             }
 
-            Volunteer x = new Volunteer(Name.getText(), Integer.parseInt(Age.getText()), Gender.getSelectedItem().toString(), temp);
+            Volunteer x = new Volunteer(name.getText(),
+                    Integer.parseInt(age.getText()), gender.getSelectedItem().toString(), temp);
 
             //the new volunteer is added to Volunteers (listOf volunteer)
             scheduler.addVolunteer(x);
@@ -530,9 +551,12 @@ public class MainFrame extends javax.swing.JFrame {
 
         }
         clear();
-    }//GEN-LAST:event_savevolbtnActionPerformed
+    }
 
-    private void savebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savebtnActionPerformed
+    //GEN-LAST:event_savevolbtnActionPerformed
+
+    private void savebtnActionPerformed(java.awt.event.ActionEvent evt) {
+        //GEN-FIRST:event_savebtnActionPerformed
         try {
             SchedulerJsonWriter.write(scheduler, "./data/temp.json");
             System.out.println("Session saved!");
@@ -547,9 +571,11 @@ public class MainFrame extends javax.swing.JFrame {
         } catch (JSONException ex) {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_savebtnActionPerformed
+    }
+    //GEN-LAST:event_savebtnActionPerformed
 
-    private void loadbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadbtnActionPerformed
+    private void loadbtnActionPerformed(java.awt.event.ActionEvent evt) {
+        //GEN-FIRST:event_loadbtnActionPerformed
         try {
             scheduler = SchedulerJsonReader.read("./data/temp.json");
             System.out.println("Session loaded");
@@ -562,21 +588,33 @@ public class MainFrame extends javax.swing.JFrame {
         } catch (JSONException ex) {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_loadbtnActionPerformed
+    }
 
-    private void pickvolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pickvolActionPerformed
+    //GEN-LAST:event_loadbtnActionPerformed
+
+    private void pickvolActionPerformed(java.awt.event.ActionEvent evt) {
+
+        //GEN-FIRST:event_pickvolActionPerformed
         JOptionPane.showMessageDialog(this, "You have successfully been assigned to " + volunteerlist.getSelectedValue()
                 + " please contact them on their cellphone number to further plan your travel!");
 
         pickvolpanel.setVisible(false);
-    }//GEN-LAST:event_pickvolActionPerformed
+    }
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    //GEN-LAST:event_pickvolActionPerformed
+
+    private void jbutton1Actionperformed(java.awt.event.ActionEvent evt) {
+
+        //GEN-FIRST:event_jButton1ActionPerformed
         diag.setVisible(true);
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }
 
-    private void modifnamebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifnamebtnActionPerformed
+    //GEN-LAST:event_jButton1ActionPerformed
+
+    private void modifnamebtnActionPerformed(java.awt.event.ActionEvent evt) {
+
+        //GEN-FIRST:event_modifnamebtnActionPerformed
         String oldname = JOptionPane.showInputDialog("Please enter your old name:", "value1");
         Volunteer volunteer = Scheduler.findVolunteer(oldname);
         if (volunteer != null) {
@@ -590,13 +628,21 @@ public class MainFrame extends javax.swing.JFrame {
             diag.dispose();
 
         }
-    }//GEN-LAST:event_modifnamebtnActionPerformed
+    }
 
-    private void returnbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnbtnActionPerformed
+    //GEN-LAST:event_modifnamebtnActionPerformed
+
+    private void returnbtnActionPerformed(java.awt.event.ActionEvent evt) {
+
+        //GEN-FIRST:event_returnbtnActionPerformed
         diag.dispose();
-    }//GEN-LAST:event_returnbtnActionPerformed
+    }
 
-    private void modifagebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifagebtnActionPerformed
+    //GEN-LAST:event_returnbtnActionPerformed
+
+    private void modifagebtnActionPerformed(java.awt.event.ActionEvent evt) {
+
+        //GEN-FIRST:event_modifagebtnActionPerformed
         String oldname = JOptionPane.showInputDialog("Please enter your name:", "value1");
         Volunteer volunteer = Scheduler.findVolunteer(oldname);
         if (volunteer != null) {
@@ -611,9 +657,13 @@ public class MainFrame extends javax.swing.JFrame {
             diag.dispose();
 
         }
-    }//GEN-LAST:event_modifagebtnActionPerformed
+    }
 
-    private void modifgenderbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifgenderbtnActionPerformed
+    //GEN-LAST:event_modifagebtnActionPerformed
+
+    private void modifgenderbtnActionPerformed(java.awt.event.ActionEvent evt) {
+
+        //GEN-FIRST:event_modifgenderbtnActionPerformed
 
         String oldname = JOptionPane.showInputDialog("Please enter your name:", "value1");
         Volunteer volunteer = Scheduler.findVolunteer(oldname);
@@ -631,9 +681,13 @@ public class MainFrame extends javax.swing.JFrame {
             diag.dispose();
 
         }
-    }//GEN-LAST:event_modifgenderbtnActionPerformed
+    }
 
-    private void adddaybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adddaybtnActionPerformed
+    //GEN-LAST:event_modifgenderbtnActionPerformed
+
+    private void adddaybtnActionPerformed(java.awt.event.ActionEvent evt) {
+
+        //GEN-FIRST:event_adddaybtnActionPerformed
         String vname = JOptionPane.showInputDialog("Please enter your name:", "value1");
         Volunteer volunteer = Scheduler.findVolunteer(vname);
         if (volunteer != null) {
@@ -645,9 +699,13 @@ public class MainFrame extends javax.swing.JFrame {
             diag.dispose();
 
         }
-    }//GEN-LAST:event_adddaybtnActionPerformed
+    }
 
-    private void remdaybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remdaybtnActionPerformed
+    //GEN-LAST:event_adddaybtnActionPerformed
+
+    private void remdaybtnActionPerformed(java.awt.event.ActionEvent evt) {
+
+        //GEN-FIRST:event_remdaybtnActionPerformed
 
         String vname = JOptionPane.showInputDialog("Please enter your name:", "value1");
         Volunteer volunteer = Scheduler.findVolunteer(vname);
@@ -661,7 +719,9 @@ public class MainFrame extends javax.swing.JFrame {
 
         }
 
-    }//GEN-LAST:event_remdaybtnActionPerformed
+    }
+
+    //GEN-LAST:event_remdaybtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -669,9 +729,9 @@ public class MainFrame extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Age;
-    private javax.swing.JComboBox<String> Gender;
-    private javax.swing.JTextField Name;
+    private javax.swing.JTextField age;
+    private javax.swing.JComboBox<String> gender;
+    private javax.swing.JTextField name;
     private javax.swing.JButton adddaybtn;
     private javax.swing.JLabel availabvar;
     private javax.swing.JButton clibtn;
@@ -680,13 +740,13 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JDialog diag;
     private javax.swing.JButton exitbtn;
     private javax.swing.JCheckBox fridaycheck;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton jbutton1;
+    private javax.swing.JLabel jlabel1;
+    private javax.swing.JLabel jlabel2;
+    private javax.swing.JLabel jlabel3;
+    private javax.swing.JLabel jlabel4;
+    private javax.swing.JLabel jlabel5;
+    private javax.swing.JScrollPane jscrollpane1;
     private javax.swing.JButton loadbtn;
     private javax.swing.JButton modifagebtn;
     private javax.swing.JButton modifgenderbtn;
