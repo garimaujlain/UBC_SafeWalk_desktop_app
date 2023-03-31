@@ -59,6 +59,19 @@ public class VolunteerTest {
         assertEquals("Female", volunteer.getGender());
     }
 
+    @Test
+    public void testGetAvailability() {
+        ArrayList<Boolean> availability = new ArrayList<>(Arrays.asList(true, false, true, false, true, false, true));
+        Volunteer volunteer = new Volunteer("John Smith", 33, "Male", availability);
+        assertTrue(volunteer.getAvailability("Monday"));
+        assertFalse(volunteer.getAvailability("Tuesday"));
+        assertTrue(volunteer.getAvailability("Wednesday"));
+        assertFalse(volunteer.getAvailability("Thursday"));
+        assertTrue(volunteer.getAvailability("Friday"));
+        assertFalse(volunteer.getAvailability("Saturday"));
+        assertTrue(volunteer.getAvailability("Sunday"));
+        assertNull(volunteer.getAvailability("Invalid day"));
+    }
 
     @Test
     public void testAddDay() {

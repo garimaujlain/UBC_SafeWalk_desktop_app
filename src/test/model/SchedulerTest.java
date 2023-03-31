@@ -59,7 +59,63 @@ public class SchedulerTest {
         assertFalse(schedule.get("Sunday").contains(volunteer2));
     }
 
+    @Test
+    public void testScheduler2() {
 
+
+        List<Volunteer> volunteers = new ArrayList<>();
+        Scheduler scheduler = new Scheduler();
+
+
+    }
+    @Test
+    void testOnDuty() {
+
+
+
+        ArrayList<Boolean> availability4 = new ArrayList<>(Arrays.asList(false, true, true, false, false, false, true));
+        ArrayList<Boolean> availability5 = new ArrayList<>(Arrays.asList(true, false, true, false, false, true, false));
+        ArrayList<Boolean> availability6 = new ArrayList<>(Arrays.asList(false, false, true, true, false, true, false));
+
+        Volunteer volunteer4 = new Volunteer("Alice", 25, "Female", availability4);
+        Volunteer volunteer5 = new Volunteer("Christian", 30, "Male", availability5);
+        Volunteer volunteer6 = new Volunteer("Raj", 35, "Male", availability6);
+        List<Volunteer> volunteers = new ArrayList<>(Arrays.asList(volunteer4, volunteer5, volunteer6));
+        new Scheduler(volunteers);
+
+
+
+        List<String> tuesdayVolunteers = Scheduler.onDuty("Tuesday");
+        assertEquals(1, tuesdayVolunteers.size());
+        assertTrue(tuesdayVolunteers.contains("Alice"));
+
+
+        List<String> saturdayVolunteers = Scheduler.onDuty("Saturday");
+        assertEquals(2, saturdayVolunteers.size());
+
+        assertTrue(saturdayVolunteers.contains("Christian"));
+        assertTrue(saturdayVolunteers.contains("Raj"));
+    }
+
+    @Test
+    void testAddVolunteer() {
+        ArrayList<Boolean> availability4 = new ArrayList<>(Arrays.asList(false, true, true, false, false, false, true));
+        ArrayList<Boolean> availability5 = new ArrayList<>(Arrays.asList(true, false, true, false, false, true, false));
+        ArrayList<Boolean> availability6 = new ArrayList<>(Arrays.asList(false, false, true, true, false, true, false));
+        ArrayList<Boolean> availability7 = new ArrayList<>(Arrays.asList(false, true, true, false, true, false, true));
+
+        Volunteer volunteer4 = new Volunteer("Christian", 25, "Female", availability4);
+        Volunteer volunteer5 = new Volunteer("Raj", 30, "Male", availability5);
+        Volunteer volunteer6 = new Volunteer("Charlie", 35, "Male", availability6);
+
+        List<Volunteer> volunteers = new ArrayList<>(Arrays.asList(volunteer4, volunteer5, volunteer6));
+        Scheduler scheduler = new Scheduler(volunteers);
+
+        Volunteer volunteer7 = new Volunteer("Dane", 40, "Male", availability7);
+        scheduler.addVolunteer(volunteer7);
+        assertEquals(4, scheduler.getVolunteers().size()); // make sure the new volunteer was added
+        assertTrue(scheduler.getVolunteers().contains(volunteer7)); // make sure the new volunteer is in the list
+    }
 
     @Test
     void testFindVolunteer() {

@@ -19,19 +19,18 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * @author ahmed
- */
+
+//code for GUI for safewalk Application
 public class MainFrame extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MainFrame
-     */
+
+
     String type;
     Volunteer volunteer;
     Scheduler scheduler;
     User user;
 
+    // Creates new form MainFrame
     public MainFrame() {
         volunteer = new Volunteer();
         scheduler = new Scheduler();
@@ -43,7 +42,7 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
 
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+
     @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings", "checkstyle:LineLength"})
     private void initComponents() {
 
@@ -88,6 +87,7 @@ public class MainFrame extends javax.swing.JFrame {
         diag.setMinimumSize(new java.awt.Dimension(595, 363));
         diag.setResizable(false);
 
+        //modify name
         modifnamebtn.setText("Modify Name");
         modifnamebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,6 +95,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        //modify gender
         modifagebtn.setText("Modify Age");
         modifagebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,6 +103,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        //to modufy age
         modifgenderbtn.setText("Modify Gender");
         modifgenderbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,6 +111,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        //to add day to schedule
         adddaybtn.setText("Add  available day");
         adddaybtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,6 +119,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        //to remove day from schedule
         remdaybtn.setText("Remove available day");
         remdaybtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,6 +127,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        //to return to main menu
         returnbtn.setText("Return to main menu");
         returnbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,6 +173,7 @@ public class MainFrame extends javax.swing.JFrame {
         jlabel1.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
         jlabel1.setText("Welcome To SafeWalk!");
 
+        //to start as new volunteer
         volbtn.setText("Start As a new Volunteer");
         volbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,6 +181,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        //to start as a client
         clibtn.setText("Start As a Client");
         clibtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,6 +189,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        //to load the app
         loadbtn.setText("Load App");
         loadbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,6 +197,8 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+
+        //to save the app
         savebtn.setText("Save App");
         savebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -196,6 +206,8 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+
+        //to exit the app
         exitbtn.setText("Exit");
         exitbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -213,6 +225,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         availabvar.setText("Your Availability:");
 
+        //saves list of volunteers to temp.json
         savevolbtn.setText("Save");
         savevolbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -226,6 +239,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         fridaycheck.setText("Friday");
 
+        //check for days of availability
         mondaycheck.setText("Monday");
         mondaycheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -239,6 +253,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         saturdaycheck.setText("Saturday");
 
+        //check all days of availability
         javax.swing.GroupLayout daysgrpLayout = new javax.swing.GroupLayout(daysgrp);
         daysgrp.setLayout(daysgrpLayout);
         daysgrpLayout.setHorizontalGroup(
@@ -335,8 +350,10 @@ public class MainFrame extends javax.swing.JFrame {
 
         jlabel5.setText("Pick a Volunteer :");
 
+        //shows available list of volunteers
         jscrollpane1.setViewportView(volunteerlist);
 
+        //picks one volunteer from list
         pickvol.setText("Pick Selected Volunteer");
         pickvol.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -373,6 +390,7 @@ public class MainFrame extends javax.swing.JFrame {
                                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
+        //to start as current volunteer
         jbutton1.setText("Start as an existing Volunteer");
         jbutton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -436,10 +454,12 @@ public class MainFrame extends javax.swing.JFrame {
         pack();
     }
 
-    // </editor-fold>//GEN-END:initComponents
 
+
+
+    //new volunteer
     private void volbtnActionPerformed(java.awt.event.ActionEvent evt) {
-        //GEN-FIRST:event_volbtnActionPerformed
+
         type = "V";
         startpanel.setVisible(true);
         daysgrp.setVisible(true);
@@ -448,26 +468,28 @@ public class MainFrame extends javax.swing.JFrame {
 
     }
 
-    //GEN-LAST:event_volbtnActionPerformed
 
+
+    //to exit app
     private void exitbtnActionPerformed(java.awt.event.ActionEvent evt) {
         //GEN-FIRST:event_exitbtnActionPerformed
         System.exit(0);
     }
 
-    //GEN-LAST:event_exitbtnActionPerformed
 
     private void mondaycheckActionPerformed(java.awt.event.ActionEvent evt) {
 
-        //GEN-FIRST:event_mondaycheckActionPerformed
-        // TODO add your handling code here:
+
+
     }
 
-    //GEN-LAST:event_mondaycheckActionPerformed
+
+
+
+    //new client
 
     private void clibtnActionPerformed(java.awt.event.ActionEvent evt) {
 
-        //GEN-FIRST:event_clibtnActionPerformed
         type = "C";
         startpanel.setVisible(true);
         daysgrp.setVisible(false);
@@ -475,7 +497,6 @@ public class MainFrame extends javax.swing.JFrame {
         availabvar.setText("The day you need a Volunteer:");
     }
 
-    //GEN-LAST:event_clibtnActionPerformed
 
     public void clear() {
         name.setText("");
@@ -483,9 +504,12 @@ public class MainFrame extends javax.swing.JFrame {
 
     }
 
+
+
+    //availabilty of new volunteer, with information
     @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     private void savevolbtnActionPerformed(java.awt.event.ActionEvent evt) {
-        //GEN-FIRST:event_savevolbtnActionPerformed
+
         startpanel.setVisible(false);
         DefaultListModel demoList = new DefaultListModel();
 
@@ -553,10 +577,12 @@ public class MainFrame extends javax.swing.JFrame {
         clear();
     }
 
-    //GEN-LAST:event_savevolbtnActionPerformed
 
+
+
+    // save list of volunteers to json file when save is clicked
     private void savebtnActionPerformed(java.awt.event.ActionEvent evt) {
-        //GEN-FIRST:event_savebtnActionPerformed
+
         try {
             SchedulerJsonWriter.write(scheduler, "./data/temp.json");
             System.out.println("Session saved!");
@@ -572,8 +598,10 @@ public class MainFrame extends javax.swing.JFrame {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    //GEN-LAST:event_savebtnActionPerformed
 
+
+
+    //load all volunteers from json file when clicked on load
     private void loadbtnActionPerformed(java.awt.event.ActionEvent evt) {
         //GEN-FIRST:event_loadbtnActionPerformed
         try {
@@ -590,31 +618,33 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }
 
-    //GEN-LAST:event_loadbtnActionPerformed
 
+
+    //display text of which volunteer you picked
     private void pickvolActionPerformed(java.awt.event.ActionEvent evt) {
 
-        //GEN-FIRST:event_pickvolActionPerformed
+
         JOptionPane.showMessageDialog(this, "You have successfully been assigned to " + volunteerlist.getSelectedValue()
                 + " please contact them on their cellphone number to further plan your travel!");
 
         pickvolpanel.setVisible(false);
     }
 
-    //GEN-LAST:event_pickvolActionPerformed
+
 
     private void jbutton1Actionperformed(java.awt.event.ActionEvent evt) {
 
-        //GEN-FIRST:event_jButton1ActionPerformed
+
         diag.setVisible(true);
 
     }
 
-    //GEN-LAST:event_jButton1ActionPerformed
 
+
+    //modifies name
     private void modifnamebtnActionPerformed(java.awt.event.ActionEvent evt) {
 
-        //GEN-FIRST:event_modifnamebtnActionPerformed
+
         String oldname = JOptionPane.showInputDialog("Please enter your old name:", "value1");
         Volunteer volunteer = Scheduler.findVolunteer(oldname);
         if (volunteer != null) {
@@ -630,19 +660,20 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }
 
-    //GEN-LAST:event_modifnamebtnActionPerformed
+
 
     private void returnbtnActionPerformed(java.awt.event.ActionEvent evt) {
 
-        //GEN-FIRST:event_returnbtnActionPerformed
+
         diag.dispose();
     }
 
-    //GEN-LAST:event_returnbtnActionPerformed
 
+
+    //modifies age
     private void modifagebtnActionPerformed(java.awt.event.ActionEvent evt) {
 
-        //GEN-FIRST:event_modifagebtnActionPerformed
+
         String oldname = JOptionPane.showInputDialog("Please enter your name:", "value1");
         Volunteer volunteer = Scheduler.findVolunteer(oldname);
         if (volunteer != null) {
@@ -659,11 +690,11 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }
 
-    //GEN-LAST:event_modifagebtnActionPerformed
 
+
+    //modifies gender
     private void modifgenderbtnActionPerformed(java.awt.event.ActionEvent evt) {
 
-        //GEN-FIRST:event_modifgenderbtnActionPerformed
 
         String oldname = JOptionPane.showInputDialog("Please enter your name:", "value1");
         Volunteer volunteer = Scheduler.findVolunteer(oldname);
@@ -683,8 +714,8 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }
 
-    //GEN-LAST:event_modifgenderbtnActionPerformed
 
+    //adds day of availabilty of volunteer
     private void adddaybtnActionPerformed(java.awt.event.ActionEvent evt) {
 
         //GEN-FIRST:event_adddaybtnActionPerformed
@@ -701,11 +732,11 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }
 
-    //GEN-LAST:event_adddaybtnActionPerformed
 
+    //removes day of availabilty of volunteer
     private void remdaybtnActionPerformed(java.awt.event.ActionEvent evt) {
 
-        //GEN-FIRST:event_remdaybtnActionPerformed
+
 
         String vname = JOptionPane.showInputDialog("Please enter your name:", "value1");
         Volunteer volunteer = Scheduler.findVolunteer(vname);
@@ -721,14 +752,9 @@ public class MainFrame extends javax.swing.JFrame {
 
     }
 
-    //GEN-LAST:event_remdaybtnActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
 
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration
     private javax.swing.JTextField age;
     private javax.swing.JComboBox<String> gender;
     private javax.swing.JTextField name;
@@ -766,5 +792,5 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton volbtn;
     private javax.swing.JList<String> volunteerlist;
     private javax.swing.JCheckBox wednesdaycheck;
-    // End of variables declaration//GEN-END:variables
+
 }

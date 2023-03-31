@@ -97,10 +97,7 @@ public class Scheduler {
         return volunteers;
     }
 
-    public void setVolunteers(List<Volunteer> volunteers) {
-        Scheduler.volunteers = volunteers;
 
-    }
 //
 //    public JSONObject toJson() throws Exception {
 //        JSONObject json = new JSONObject();
