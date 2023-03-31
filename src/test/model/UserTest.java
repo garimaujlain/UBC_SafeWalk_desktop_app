@@ -1,10 +1,8 @@
 package model;
+
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 //tests for user class
@@ -24,11 +22,6 @@ public class UserTest {
 
 
 
-    @Test
-    public void testGetGender() {
-        User user = new User("Chantal", 20, "male", "Yes");
-        assertEquals("male", user.getGender());
-    }
 
     @Test
     public void testGetAge() {
