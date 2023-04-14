@@ -107,6 +107,8 @@ public class Volunteer {
 
         if (volunteer != null) {
             volunteer.setName(name);
+            EventLog.getInstance().logEvent(new Event("Volunteer name changed  :"+name));
+
         } else {
             System.out.println("Volunteer under this name doesn't exist");
 

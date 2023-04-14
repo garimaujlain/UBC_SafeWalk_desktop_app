@@ -56,6 +56,8 @@ public class Scheduler {
     //REQUIRES: A Volunteer as input
     public void addVolunteer(Volunteer volunteer) {
         volunteers.add(volunteer);
+        EventLog.getInstance().logEvent(new Event("Volunteer Added :"+volunteer.getName()));
+
     }
 
 
@@ -97,7 +99,10 @@ public class Scheduler {
         return volunteers;
     }
 
+    public void setVolunteers(List<Volunteer> volunteers) {
+        Scheduler.volunteers = volunteers;
 
+    }
 //
 //    public JSONObject toJson() throws Exception {
 //        JSONObject json = new JSONObject();
@@ -108,7 +113,6 @@ public class Scheduler {
 //    }
 
 }
-
 
 
 

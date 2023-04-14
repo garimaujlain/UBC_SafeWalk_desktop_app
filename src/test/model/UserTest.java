@@ -22,6 +22,11 @@ public class UserTest {
 
 
 
+    @Test
+    public void testGetGender() {
+        User user = new User("Chantal", 20, "male", "Yes");
+        assertEquals("male", user.getGender());
+    }
 
     @Test
     public void testGetAge() {

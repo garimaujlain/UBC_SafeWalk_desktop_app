@@ -1,5 +1,7 @@
 package persistence;
 
+import model.Event;
+import model.EventLog;
 import model.Scheduler;
 import model.Volunteer;
 import org.json.JSONArray;
@@ -36,6 +38,7 @@ public class SchedulerJsonWriter {
             fileWriter.close();
         } finally {
             System.out.println("Closed");
+            EventLog.getInstance().logEvent(new Event("Session Saved "));
 
         }
     }

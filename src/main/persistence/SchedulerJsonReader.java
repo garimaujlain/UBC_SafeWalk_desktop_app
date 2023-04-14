@@ -1,5 +1,7 @@
 package persistence;
 
+import model.Event;
+import model.EventLog;
 import model.Scheduler;
 import model.Volunteer;
 import org.json.JSONArray;
@@ -32,6 +34,7 @@ public class SchedulerJsonReader {
             Volunteer volunteer = Volunteer.fromJson(schedulerJsonObject);
             scheduler.addVolunteer(volunteer);
         }
+        EventLog.getInstance().logEvent(new Event("Session Loaded "));
 
         return scheduler;
     }
