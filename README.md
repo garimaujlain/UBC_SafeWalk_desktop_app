@@ -38,7 +38,7 @@ safer and more comfortable environment for UBC students.
 
 #Phase 4: Task 3
 
--The class for my console based UI, Main, has far too many lines of code that could have been broken down into smaller classes. To that end, in order to decrease coupling, my strategy is to split the console-based UI into several classes. This would limit each class to accessing only relevant information, resulting in a more modular and manageable design. By implementing this approach, I can ensure that the UI components are loosely linked, and changes made to one component will not impact the rest.
+-The class for my console based UI, Main, has far too many lines of code that could have been broken down into smaller classes. To that end, in order to decrease coupling, my strategy is to split the console-based UI into several classes. For example, I would have two separate classes for the volunteer-end of the UI and the client/user-end of the UI, rather than having both within main. This would limit each class to accessing only relevant information, resulting in a more modular and manageable design. By implementing this approach, I can ensure that the UI components are loosely linked, and changes made to one component will not impact the rest.
 
 -In my entire project, I didn't make any interface/abstract classes. By adding these I could improve the design and maintainability of my project. A refactoring I would implement is to have both Volunteer and Client(class User here) extend an abstract class called User, since they have similar functionality.
 
