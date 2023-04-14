@@ -37,6 +37,7 @@ safer and more comfortable environment for UBC students.
 #Phase 4: Task 2
 ![](/home/gollum/IdeaProjects/project_z5q4k/phase4 task 2.png)
 -Please note that I am unable to add the image for this task, however the image phase4_task_2.png is present in the project files.
+
 -Thu Apr 13 21:48:53 PDT 2023
 -Volunteer Added :Garima
 -Thu Apr 13 21:49:23 PDT 2023
