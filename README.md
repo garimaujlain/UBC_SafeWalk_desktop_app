@@ -24,3 +24,24 @@ safer and more comfortable environment for UBC students.
 - As a user, If I am a client, I want to be able to request company from a volunteer who is available on my required day so that I can get home safely and feel more secure. 
 - As a user, If I am a volunteer, I want to be able to pick-up where I left off, and save my availability, and personal information, rather than filling out the form every time. 
 - As a user, I want to be able to load my application.
+
+# Instructions for Grader
+
+- You can generate the first required action by adding a new volunteer to list of volunteers, or by adding new availability to a current volunteer's schedule.
+- You can generate the second required action by deleting a current volunteer's availability from their schedule if they are busy on a particular day.
+- You can locate my visual component by running the application, and at the very start you can see the image. 
+- You can save the state of my application by clicking on save in the GUI. 
+- You can reload the state of my application by clicking on load in the GUI. 
+
+#Phase 4: Task 2
+![](/home/gollum/IdeaProjects/project_z5q4k/phase4 task 2.png)
+
+#Phase 4: Task 3
+
+-The class for my console based UI, Main, has far too many lines of code that could have been broken down into smaller classes. To that end, in order to decrease coupling, my strategy is to split the console-based UI into several classes. This would limit each class to accessing only relevant information, resulting in a more modular and manageable design. By implementing this approach, I can ensure that the UI components are loosely linked, and changes made to one component will not impact the rest.
+
+-In my entire project, I didn't make any interface/abstract classes. By adding these I could improve the design and maintainability of my project. A refactoring I would implement is to have both Volunteer and Client(class User here) extend an abstract class called User, since they have similar functionality.
+
+-Another refactoring I would implement is breaking my GUI into smaller classes. At the moment it is split between two classes, but the majority of its functionality is in one class, namely mainframe, making it less manageable and efficient.
+
+![](/home/gollum/IdeaProjects/project_z5q4k/UML_design_diagram.png)

@@ -92,7 +92,7 @@ public class Volunteer {
         int pos = Scheduler.daysOfWeek.indexOf(day);
         volunteer.getAvailabilityList().set(pos, false);
         System.out.println("Congratulation! Your availability on " + day + " has been deleted from our system.");
-        EventLog.getInstance().logEvent(new Event("Volunteer added day to schedule"));
+        EventLog.getInstance().logEvent(new Event("Volunteer deleted day from schedule"));
     }
 
     // Changes the name of given Volunteer
