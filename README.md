@@ -32,13 +32,23 @@ safer and more comfortable environment for UBC students.
 - You can locate my visual component by running the application, and at the very start you can see the image. 
 - You can save the state of my application by clicking on save in the GUI. 
 - You can reload the state of my application by clicking on load in the GUI. 
+- For phase four, please grade the last commit "Final phase 4 for TA grading- April 13th"
 
-##Phase 4: Task 2
+#Phase 4: Task 2
 ![](/home/gollum/IdeaProjects/project_z5q4k/phase4 task 2.png)
+-Please note that I am unable to add the image for this task, however the image phase4_task_2.png is present in the project files.
+-Thu Apr 13 21:48:53 PDT 2023
+-Volunteer Added :Garima
+-Thu Apr 13 21:49:23 PDT 2023
+-Volunteer deleted day from schedule
+-Thu Apr 13 21:49:41 PDT 2023
+-Volunteer added day to schedule
+-Thu Apr 13 21:49:58 PDT 2023
+-Client Assigned to :Garima
 
-##Phase 4: Task 3
+#Phase 4: Task 3
 
--The class for my console based UI, Main, has far too many lines of code that could have been broken down into smaller classes. To that end, in order to decrease coupling, my strategy is to split the console-based UI into several classes. For example, I would have two separate classes for the volunteer-end of the UI and the client/user-end of the UI, rather than having both within main. This would limit each class to accessing only relevant information, resulting in a more modular and manageable design. By implementing this approach, I can ensure that the UI components are loosely linked, and changes made to one component will not impact the rest.
+-The class for my console based UI, Main, has far too many lines of code that could have been broken down into smaller classes. To that end, in order to decrease coupling, my strategy is to split the console-based UI into several classes. For example, I would have two separate classes for the volunteer-end of the UI and the client/user-end of the UI. This would limit each class to accessing only relevant information, resulting in a more modular and manageable design. By implementing this approach, I can ensure that the UI components are loosely linked, and changes made to one component will not impact the rest.
 
 -In my entire project, I didn't make any interface/abstract classes. By adding these I could improve the design and maintainability of my project. A refactoring I would implement is to have both Volunteer and Client(class User here) extend an abstract class called User, since they have similar functionality.
 
