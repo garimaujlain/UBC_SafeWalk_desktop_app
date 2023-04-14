@@ -33,10 +33,10 @@ safer and more comfortable environment for UBC students.
 - You can save the state of my application by clicking on save in the GUI. 
 - You can reload the state of my application by clicking on load in the GUI. 
 
-#Phase 4: Task 2
+##Phase 4: Task 2
 ![](/home/gollum/IdeaProjects/project_z5q4k/phase4 task 2.png)
 
-#Phase 4: Task 3
+##Phase 4: Task 3
 
 -The class for my console based UI, Main, has far too many lines of code that could have been broken down into smaller classes. To that end, in order to decrease coupling, my strategy is to split the console-based UI into several classes. For example, I would have two separate classes for the volunteer-end of the UI and the client/user-end of the UI, rather than having both within main. This would limit each class to accessing only relevant information, resulting in a more modular and manageable design. By implementing this approach, I can ensure that the UI components are loosely linked, and changes made to one component will not impact the rest.
 
