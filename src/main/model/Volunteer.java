@@ -7,6 +7,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+
+//class for volunteer of safewalkapp
 public class Volunteer {
     private String name;
     private String gender;

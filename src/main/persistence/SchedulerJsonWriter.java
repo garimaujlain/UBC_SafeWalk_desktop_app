@@ -11,6 +11,7 @@ import org.json.JSONObject;
 import java.io.FileWriter;
 import java.io.IOException;
 
+//jsonwriter
 //adapted from JsonSerializationDemo
 public class SchedulerJsonWriter {
     //private static final String FILENAME = "./data/temp.json";

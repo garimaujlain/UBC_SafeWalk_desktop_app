@@ -4,6 +4,9 @@ import java.util.Calendar;
 import java.util.Date;
 
 
+
+
+//From alarmsystem ubc cpsc 210
 /**
  * Represents an alarm system event.
  */

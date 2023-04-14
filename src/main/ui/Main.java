@@ -13,6 +13,8 @@ import java.util.Scanner;
 import java.util.List;
 
 
+
+//Console based UI for safewalkapp
 public class Main {
 
 

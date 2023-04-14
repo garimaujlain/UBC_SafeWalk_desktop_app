@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+
+//class for scheduler that has list of volunteers
 public class Scheduler {
     private static List<Volunteer> volunteers;
 
