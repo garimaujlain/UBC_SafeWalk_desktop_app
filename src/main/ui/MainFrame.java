@@ -5,9 +5,7 @@
 
 package ui;
 
-import model.Scheduler;
-import model.User;
-import model.Volunteer;
+import model.*;
 import org.json.JSONException;
 import persistence.SchedulerJsonReader;
 import persistence.SchedulerJsonWriter;
@@ -15,14 +13,13 @@ import persistence.SchedulerJsonWriter;
 import javax.swing.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 //code for GUI for safewalk Application
 public class MainFrame extends javax.swing.JFrame {
-
 
 
     String type;
@@ -40,7 +37,6 @@ public class MainFrame extends javax.swing.JFrame {
         pickvolpanel.setVisible(false);
 
     }
-
 
 
     @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings", "checkstyle:LineLength"})
@@ -455,8 +451,6 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
 
-
-
     //new volunteer
     private void volbtnActionPerformed(java.awt.event.ActionEvent evt) {
 
@@ -469,10 +463,14 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
 
-
     //to exit app
     private void exitbtnActionPerformed(java.awt.event.ActionEvent evt) {
-        //GEN-FIRST:event_exitbtnActionPerformed
+        Iterator<Event> iterator = EventLog.getInstance().iterator();
+        while (iterator.hasNext()) {
+            Event element = iterator.next();
+            System.out.println(element.toString());
+        }
+
         System.exit(0);
     }
 
@@ -480,10 +478,7 @@ public class MainFrame extends javax.swing.JFrame {
     private void mondaycheckActionPerformed(java.awt.event.ActionEvent evt) {
 
 
-
     }
-
-
 
 
     //new client
@@ -503,7 +498,6 @@ public class MainFrame extends javax.swing.JFrame {
         age.setText("");
 
     }
-
 
 
     //availabilty of new volunteer, with information
@@ -578,8 +572,6 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
 
-
-
     // save list of volunteers to json file when save is clicked
     private void savebtnActionPerformed(java.awt.event.ActionEvent evt) {
 
@@ -600,7 +592,6 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
 
-
     //load all volunteers from json file when clicked on load
     private void loadbtnActionPerformed(java.awt.event.ActionEvent evt) {
         //GEN-FIRST:event_loadbtnActionPerformed
@@ -619,17 +610,15 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
 
-
     //display text of which volunteer you picked
     private void pickvolActionPerformed(java.awt.event.ActionEvent evt) {
 
-
         JOptionPane.showMessageDialog(this, "You have successfully been assigned to " + volunteerlist.getSelectedValue()
                 + " please contact them on their cellphone number to further plan your travel!");
-
         pickvolpanel.setVisible(false);
-    }
+        EventLog.getInstance().logEvent(new Event("Client Assigned to :" + volunteerlist.getSelectedValue()));
 
+    }
 
 
     private void jbutton1Actionperformed(java.awt.event.ActionEvent evt) {
@@ -638,7 +627,6 @@ public class MainFrame extends javax.swing.JFrame {
         diag.setVisible(true);
 
     }
-
 
 
     //modifies name
@@ -661,13 +649,11 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
 
-
     private void returnbtnActionPerformed(java.awt.event.ActionEvent evt) {
 
 
         diag.dispose();
     }
-
 
 
     //modifies age
@@ -689,7 +675,6 @@ public class MainFrame extends javax.swing.JFrame {
 
         }
     }
-
 
 
     //modifies gender
@@ -737,7 +722,6 @@ public class MainFrame extends javax.swing.JFrame {
     private void remdaybtnActionPerformed(java.awt.event.ActionEvent evt) {
 
 
-
         String vname = JOptionPane.showInputDialog("Please enter your name:", "value1");
         Volunteer volunteer = Scheduler.findVolunteer(vname);
         if (volunteer != null) {
@@ -751,7 +735,6 @@ public class MainFrame extends javax.swing.JFrame {
         }
 
     }
-
 
 
     // Variables declaration

@@ -69,6 +69,7 @@ public class Volunteer {
         int pos = Scheduler.daysOfWeek.indexOf(day);
         volunteer.getAvailabilityList().set(pos, true);
         System.out.println("Your availability on " + day + " has been added tp our system.");
+        EventLog.getInstance().logEvent(new Event("Volunteer added day to schedule"));
     }
 
 
@@ -89,6 +90,7 @@ public class Volunteer {
         int pos = Scheduler.daysOfWeek.indexOf(day);
         volunteer.getAvailabilityList().set(pos, false);
         System.out.println("Congratulation! Your availability on " + day + " has been deleted from our system.");
+        EventLog.getInstance().logEvent(new Event("Volunteer added day to schedule"));
     }
 
     // Changes the name of given Volunteer
@@ -107,8 +109,7 @@ public class Volunteer {
 
         if (volunteer != null) {
             volunteer.setName(name);
-            EventLog.getInstance().logEvent(new Event("Volunteer name changed  :"+name));
-
+            EventLog.getInstance().logEvent(new Event("Volunteer name changed  :" + name));
         } else {
             System.out.println("Volunteer under this name doesn't exist");
 
@@ -131,6 +132,7 @@ public class Volunteer {
 
         if (volunteer != null) {
             volunteer.setAge(age);
+            EventLog.getInstance().logEvent(new Event("Volunteer age changed  :" + age));
         } else {
             System.out.println("Volunteer under this name doesn't exist");
 
@@ -154,6 +156,7 @@ public class Volunteer {
 
         if (volunteer != null) {
             volunteer.setGender(gender);
+            EventLog.getInstance().logEvent(new Event("Volunteer gender changed  :" + gender));
         } else {
             System.out.println("Volunteer under this name doesn't exist");
 
