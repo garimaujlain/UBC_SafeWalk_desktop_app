@@ -24,16 +24,16 @@ public class SchedulerJsonReader {
 
     public static Scheduler read(String filePath) throws IOException, JSONException {
         // Read the JSON object from the file
-        File file = new File(filePath);
-        String jsonStr = new String(Files.readAllBytes(file.toPath()));
-        JSONObject json = new JSONObject(jsonStr);
+        File file = new File(filePath); //path to json file
+        String jsonStr = new String(Files.readAllBytes(file.toPath())); //reads json file
+        JSONObject json = new JSONObject(jsonStr); //creates json object
 
         // Create a scheduler from the volunteer JSON objects
         Scheduler scheduler = new Scheduler();
         JSONArray schedulerJsonArray = json.getJSONArray("volunteers");
         for (int i = 0; i < schedulerJsonArray.length(); i++) {
             JSONObject schedulerJsonObject = schedulerJsonArray.getJSONObject(i);
-            Volunteer volunteer = Volunteer.fromJson(schedulerJsonObject);
+            Volunteer volunteer = Volunteer.fromJson(schedulerJsonObject); //frson json convert each volunter to object volunter, then add to scheduel
             scheduler.addVolunteer(volunteer);
         }
         EventLog.getInstance().logEvent(new Event("Session Loaded "));
