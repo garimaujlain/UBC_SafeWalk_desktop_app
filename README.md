@@ -35,8 +35,7 @@ safer and more comfortable environment for UBC students.
 - For phase four, please grade the last commit "Final phase 4 for TA grading- April 13th"
 
 # Phase 4: Task 2
-![](./phase4\ task\ 2.png)
--Please note that I am unable to add the image for this task, however the image phase4_task_2.png is present in the project files.
+![Test](./phase4\ task\ 2.png)
 
 - Thu Apr 13 21:48:53 PDT 2023
 - Volunteer Added :Garima
